@@ -18,18 +18,23 @@ if (!defined('ABSPATH')) {
         <!-- Section Title Typography -->
         <div class="tab-pane fade show active" id="section-title-typography" role="tabpanel"
             aria-labelledby="section-title-typography-tab">
-
-
             <!-- tittle start-->
             <div class="typography-settings-section">
+
+                <div class="faqly-typography-setting-message">
+                    <strong>Important:</strong> Before using these typography settings, you must
+                    <strong>disable "Use Theme Default Style Settings"</strong> in the <strong>Display Settings
+                        Tab</strong>.
+                </div>
+
                 <h4>Item Title Typography</h4>
-                <p class="description">Configure typography settings for accordion item titles.</p>
 
                 <!-- Load Google Font Toggle -->
                 <div class="setting-group">
                     <label for="faq_item_title_load_font" class="setting-label">
                         <strong>Load Accordion Item Title Font</strong>
-                        <span class="description">Enable/disable Google fonts for the accordion item title</span><?php echo wp_kses_post(faqly_pro_label( $faqly_is_premium_user )); ?>
+                        <span class="description">Enable/disable Google fonts for the accordion item
+                            title</span><?php echo wp_kses_post(faqly_pro_label($faqly_is_premium_user)); ?>
                     </label>
                     <?php
                     $faqly_faq_item_title_load_font = get_post_meta(get_the_ID(), '_faq_item_title_load_font', true);
@@ -39,7 +44,7 @@ if (!defined('ABSPATH')) {
                     ?>
                     <div class="toggle-wrapper">
                         <label class="toggle-switch">
-                            <input type="checkbox" name="faq_item_title_load_font" id="faq_item_title_load_font" <?php checked($faqly_faq_item_title_load_font, 'on'); ?><?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?> >
+                            <input type="checkbox" name="faq_item_title_load_font" id="faq_item_title_load_font" <?php checked($faqly_faq_item_title_load_font, 'on'); ?><?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?>>
                             <span class="toggle-slider"></span>
                         </label>
                     </div>
@@ -49,7 +54,8 @@ if (!defined('ABSPATH')) {
                 <div class="setting-group">
                     <label class="setting-label">
                         <strong>Item Title Font</strong>
-                        <span class="description">Set font properties for accordion item titles</span><?php echo wp_kses_post(faqly_pro_label( $faqly_is_premium_user )); ?>
+                        <span class="description">Set font properties for accordion item
+                            titles</span><?php echo wp_kses_post(faqly_pro_label($faqly_is_premium_user)); ?>
                     </label>
                     <div class="font-properties-wrapper"
                         style="display: flex; flex-wrap: wrap; gap: 15px; align-items: end;">
@@ -82,10 +88,11 @@ if (!defined('ABSPATH')) {
                                 'VT323' => 'VT323'
                             ];
                             ?>
-                            <select name="faq_item_title_font_family" id="faq_item_title_font_family" <?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?>
-                                class="form-control" style="width: 120px;">
+                            <select name="faq_item_title_font_family" id="faq_item_title_font_family" <?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?> class="form-control"
+                                style="width: 120px;">
                                 <?php foreach ($faqly_google_fonts as $faqly_key => $faqly_label): ?>
-                                    <option value="<?php echo esc_attr($faqly_key); ?>" <?php selected($faqly_faq_item_title_font_family, $faqly_key); ?>><?php echo esc_html($faqly_label); ?>
+                                    <option value="<?php echo esc_attr($faqly_key); ?>" <?php selected($faqly_faq_item_title_font_family, $faqly_key); ?>>
+                                        <?php echo esc_html($faqly_label); ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>
@@ -98,11 +105,14 @@ if (!defined('ABSPATH')) {
                             <?php
                             $faqly_faq_item_title_font_style = get_post_meta(get_the_ID(), '_faq_item_title_font_style', true) ?: 'normal';
                             ?>
-                            <select name="faq_item_title_font_style" id="faq_item_title_font_style" class="form-control" <?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?>
+                            <select name="faq_item_title_font_style" id="faq_item_title_font_style" class="form-control"
+                                <?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?>
                                 style="width: 100px;">
-                                <option value="normal" <?php selected($faqly_faq_item_title_font_style, 'normal'); ?>>Normal
+                                <option value="normal" <?php selected($faqly_faq_item_title_font_style, 'normal'); ?>>
+                                    Normal
                                 </option>
-                                <option value="italic" <?php selected($faqly_faq_item_title_font_style, 'italic'); ?>>Italic
+                                <option value="italic" <?php selected($faqly_faq_item_title_font_style, 'italic'); ?>>
+                                    Italic
                                 </option>
                                 <option value="oblique" <?php selected($faqly_faq_item_title_font_style, 'oblique'); ?>>
                                     Oblique</option>
@@ -116,16 +126,18 @@ if (!defined('ABSPATH')) {
                             <?php
                             $faqly_faq_item_title_font_subset = get_post_meta(get_the_ID(), '_faq_item_title_font_subset', true) ?: 'latin';
                             ?>
-                            <select name="faq_item_title_font_subset" id="faq_item_title_font_subset" <?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?>
-                                class="form-control" style="width: 100px;">
-                                <option value="latin" <?php selected($faqly_faq_item_title_font_subset, 'latin'); ?>>Latin
+                            <select name="faq_item_title_font_subset" id="faq_item_title_font_subset" <?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?> class="form-control"
+                                style="width: 100px;">
+                                <option value="latin" <?php selected($faqly_faq_item_title_font_subset, 'latin'); ?>>
+                                    Latin
                                 </option>
                                 <option value="latin-ext" <?php selected($faqly_faq_item_title_font_subset, 'latin-ext'); ?>>
                                     Latin Ext</option>
                                 <option value="cyrillic" <?php selected($faqly_faq_item_title_font_subset, 'cyrillic'); ?>>
                                     Cyrillic</option>
                                 <option value="cyrillic-ext" <?php selected($faqly_faq_item_title_font_subset, 'cyrillic-ext'); ?>>Cyrillic Ext</option>
-                                <option value="greek" <?php selected($faqly_faq_item_title_font_subset, 'greek'); ?>>Greek
+                                <option value="greek" <?php selected($faqly_faq_item_title_font_subset, 'greek'); ?>>
+                                    Greek
                                 </option>
                                 <option value="greek-ext" <?php selected($faqly_faq_item_title_font_subset, 'greek-ext'); ?>>
                                     Greek Ext</option>
@@ -140,13 +152,16 @@ if (!defined('ABSPATH')) {
                             <?php
                             $faqly_faq_item_title_text_align = get_post_meta(get_the_ID(), '_faq_item_title_text_align', true) ?: 'left';
                             ?>
-                            <select name="faq_item_title_text_align" id="faq_item_title_text_align" class="form-control" <?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?>
+                            <select name="faq_item_title_text_align" id="faq_item_title_text_align" class="form-control"
+                                <?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?>
                                 style="width: 100px;">
                                 <option value="left" <?php selected($faqly_faq_item_title_text_align, 'left'); ?>>Left
                                 </option>
-                                <option value="center" <?php selected($faqly_faq_item_title_text_align, 'center'); ?>>Center
+                                <option value="center" <?php selected($faqly_faq_item_title_text_align, 'center'); ?>>
+                                    Center
                                 </option>
-                                <option value="right" <?php selected($faqly_faq_item_title_text_align, 'right'); ?>>Right
+                                <option value="right" <?php selected($faqly_faq_item_title_text_align, 'right'); ?>>
+                                    Right
                                 </option>
                                 <option value="justify" <?php selected($faqly_faq_item_title_text_align, 'justify'); ?>>
                                     Justify</option>
@@ -160,9 +175,10 @@ if (!defined('ABSPATH')) {
                             <?php
                             $faqly_faq_item_title_text_transform = get_post_meta(get_the_ID(), '_faq_item_title_text_transform', true) ?: 'none';
                             ?>
-                            <select name="faq_item_title_text_transform" id="faq_item_title_text_transform" <?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?>
-                                class="form-control" style="width: 120px;">
-                                <option value="none" <?php selected($faqly_faq_item_title_text_transform, 'none'); ?>>None
+                            <select name="faq_item_title_text_transform" id="faq_item_title_text_transform" <?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?> class="form-control"
+                                style="width: 120px;">
+                                <option value="none" <?php selected($faqly_faq_item_title_text_transform, 'none'); ?>>
+                                    None
                                 </option>
                                 <option value="capitalize" <?php selected($faqly_faq_item_title_text_transform, 'capitalize'); ?>>Capitalize</option>
                                 <option value="uppercase" <?php selected($faqly_faq_item_title_text_transform, 'uppercase'); ?>>Uppercase</option>
@@ -185,7 +201,8 @@ if (!defined('ABSPATH')) {
                 <div class="setting-group">
                     <label for="faq_item_desc_load_font" class="setting-label">
                         <strong>Load Accordion Item Description Font</strong>
-                        <span class="description">Enable/disable Google fonts for the accordion item description</span><?php echo wp_kses_post(faqly_pro_label( $faqly_is_premium_user )); ?>
+                        <span class="description">Enable/disable Google fonts for the accordion item
+                            description</span><?php echo wp_kses_post(faqly_pro_label($faqly_is_premium_user)); ?>
                     </label>
                     <?php
                     $faqly_faq_item_desc_load_font = get_post_meta(get_the_ID(), '_faq_item_desc_load_font', true);
@@ -195,7 +212,7 @@ if (!defined('ABSPATH')) {
                     ?>
                     <div class="toggle-wrapper">
                         <label class="toggle-switch">
-                            <input type="checkbox" name="faq_item_desc_load_font" id="faq_item_desc_load_font" <?php checked($faqly_faq_item_desc_load_font, 'on'); ?><?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?>>
+                            <input type="checkbox" name="faq_item_desc_load_font" id="faq_item_desc_load_font" <?php checked($faqly_faq_item_desc_load_font, 'on'); ?><?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?>>
                             <span class="toggle-slider"></span>
                         </label>
                     </div>
@@ -205,7 +222,8 @@ if (!defined('ABSPATH')) {
                 <div class="setting-group">
                     <label class="setting-label">
                         <strong>Description Font</strong>
-                        <span class="description">Set font properties for accordion item descriptions</span><?php echo wp_kses_post(faqly_pro_label( $faqly_is_premium_user )); ?>
+                        <span class="description">Set font properties for accordion item
+                            descriptions</span><?php echo wp_kses_post(faqly_pro_label($faqly_is_premium_user)); ?>
                     </label>
                     <div class="font-properties-wrapper"
                         style="display: flex; flex-wrap: wrap; gap: 15px; align-items: end;">
@@ -216,10 +234,12 @@ if (!defined('ABSPATH')) {
                             <?php
                             $faqly_faq_item_desc_font_family = get_post_meta(get_the_ID(), '_faq_item_desc_font_family', true) ?: 'Arial';
                             ?>
-                            <select name="faq_item_desc_font_family" id="faq_item_desc_font_family" class="form-control" <?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?>
+                            <select name="faq_item_desc_font_family" id="faq_item_desc_font_family" class="form-control"
+                                <?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?>
                                 style="width: 120px;">
                                 <?php foreach ($faqly_google_fonts as $faqly_key => $faqly_label): ?>
-                                    <option value="<?php echo esc_attr($faqly_key); ?>" <?php selected($faqly_faq_item_desc_font_family, $faqly_key); ?>><?php echo esc_html($faqly_label); ?></option>
+                                    <option value="<?php echo esc_attr($faqly_key); ?>" <?php selected($faqly_faq_item_desc_font_family, $faqly_key); ?>>
+                                        <?php echo esc_html($faqly_label); ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -231,13 +251,17 @@ if (!defined('ABSPATH')) {
                             <?php
                             $faqly_faq_item_desc_font_style = get_post_meta(get_the_ID(), '_faq_item_desc_font_style', true) ?: 'normal';
                             ?>
-                            <select name="faq_item_desc_font_style" id="faq_item_desc_font_style" class="form-control" <?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?>
+                            <select name="faq_item_desc_font_style" id="faq_item_desc_font_style" class="form-control"
+                                <?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?>
                                 style="width: 100px;">
-                                <option value="normal" <?php selected($faqly_faq_item_desc_font_style, 'normal'); ?>>Normal
+                                <option value="normal" <?php selected($faqly_faq_item_desc_font_style, 'normal'); ?>>
+                                    Normal
                                 </option>
-                                <option value="italic" <?php selected($faqly_faq_item_desc_font_style, 'italic'); ?>>Italic
+                                <option value="italic" <?php selected($faqly_faq_item_desc_font_style, 'italic'); ?>>
+                                    Italic
                                 </option>
-                                <option value="oblique" <?php selected($faqly_faq_item_desc_font_style, 'oblique'); ?>>Oblique
+                                <option value="oblique" <?php selected($faqly_faq_item_desc_font_style, 'oblique'); ?>>
+                                    Oblique
                                 </option>
                             </select>
                         </div>
@@ -249,16 +273,19 @@ if (!defined('ABSPATH')) {
                             <?php
                             $faqly_faq_item_desc_font_subset = get_post_meta(get_the_ID(), '_faq_item_desc_font_subset', true) ?: 'latin';
                             ?>
-                            <select name="faq_item_desc_font_subset" id="faq_item_desc_font_subset" class="form-control" <?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?>
+                            <select name="faq_item_desc_font_subset" id="faq_item_desc_font_subset" class="form-control"
+                                <?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?>
                                 style="width: 100px;">
-                                <option value="latin" <?php selected($faqly_faq_item_desc_font_subset, 'latin'); ?>>Latin
+                                <option value="latin" <?php selected($faqly_faq_item_desc_font_subset, 'latin'); ?>>
+                                    Latin
                                 </option>
                                 <option value="latin-ext" <?php selected($faqly_faq_item_desc_font_subset, 'latin-ext'); ?>>
                                     Latin Ext</option>
                                 <option value="cyrillic" <?php selected($faqly_faq_item_desc_font_subset, 'cyrillic'); ?>>
                                     Cyrillic</option>
                                 <option value="cyrillic-ext" <?php selected($faqly_faq_item_desc_font_subset, 'cyrillic-ext'); ?>>Cyrillic Ext</option>
-                                <option value="greek" <?php selected($faqly_faq_item_desc_font_subset, 'greek'); ?>>Greek
+                                <option value="greek" <?php selected($faqly_faq_item_desc_font_subset, 'greek'); ?>>
+                                    Greek
                                 </option>
                                 <option value="greek-ext" <?php selected($faqly_faq_item_desc_font_subset, 'greek-ext'); ?>>
                                     Greek Ext</option>
@@ -274,14 +301,18 @@ if (!defined('ABSPATH')) {
                             <?php
                             $faqly_faq_item_desc_text_align = get_post_meta(get_the_ID(), '_faq_item_desc_text_align', true) ?: 'left';
                             ?>
-                            <select name="faq_item_desc_text_align" id="faq_item_desc_text_align" class="form-control" <?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?>
+                            <select name="faq_item_desc_text_align" id="faq_item_desc_text_align" class="form-control"
+                                <?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?>
                                 style="width: 100px;">
-                                <option value="left" <?php selected($faqly_faq_item_desc_text_align, 'left'); ?>>Left</option>
-                                <option value="center" <?php selected($faqly_faq_item_desc_text_align, 'center'); ?>>Center
+                                <option value="left" <?php selected($faqly_faq_item_desc_text_align, 'left'); ?>>Left
+                                </option>
+                                <option value="center" <?php selected($faqly_faq_item_desc_text_align, 'center'); ?>>
+                                    Center
                                 </option>
                                 <option value="right" <?php selected($faqly_faq_item_desc_text_align, 'right'); ?>>Right
                                 </option>
-                                <option value="justify" <?php selected($faqly_faq_item_desc_text_align, 'justify'); ?>>Justify
+                                <option value="justify" <?php selected($faqly_faq_item_desc_text_align, 'justify'); ?>>
+                                    Justify
                                 </option>
                             </select>
                         </div>
@@ -293,9 +324,10 @@ if (!defined('ABSPATH')) {
                             <?php
                             $faqly_faq_item_desc_text_transform = get_post_meta(get_the_ID(), '_faq_item_desc_text_transform', true) ?: 'none';
                             ?>
-                            <select name="faq_item_desc_text_transform" id="faq_item_desc_text_transform" <?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?>
-                                class="form-control" style="width: 120px;">
-                                <option value="none" <?php selected($faqly_faq_item_desc_text_transform, 'none'); ?>>None
+                            <select name="faq_item_desc_text_transform" id="faq_item_desc_text_transform" <?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?> class="form-control"
+                                style="width: 120px;">
+                                <option value="none" <?php selected($faqly_faq_item_desc_text_transform, 'none'); ?>>
+                                    None
                                 </option>
                                 <option value="capitalize" <?php selected($faqly_faq_item_desc_text_transform, 'capitalize'); ?>>Capitalize</option>
                                 <option value="uppercase" <?php selected($faqly_faq_item_desc_text_transform, 'uppercase'); ?>>Uppercase</option>
@@ -310,4 +342,3 @@ if (!defined('ABSPATH')) {
         </div>
     </div>
 </div>
-

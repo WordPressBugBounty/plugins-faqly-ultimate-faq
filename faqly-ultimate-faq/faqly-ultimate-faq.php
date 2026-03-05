@@ -3,7 +3,7 @@
  * Plugin Name:       FAQly – Ultimate FAQ
  * Plugin URI:        https://www.seothemesexpert.com/products/best-wordpress-faq-plugin-free
  * Description:       A plugin to manage FAQs and display them as an accordion using a shortcode.
- * Version:           1.1.6
+ * Version:           1.1.7
  * Requires at least: 5.2
  * Requires PHP:      7.4
  * Author:            drakearthur
@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
 }
 define('FAQLY_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('FAQLY_PLUGIN_URL', plugin_dir_url(__FILE__));
-define('FAQLY_PLUGIN_VERSION', '1.1.6');
+define('FAQLY_PLUGIN_VERSION', '1.1.7');
 
 define('FAQLY_PLUGIN_MAIN_URL', 'https://www.seothemesexpert.com/');
 define('FAQLY_PLUGIN_LICENSE_URL', 'https://license.seothemesexpert.com/api/public/');
@@ -53,10 +53,7 @@ if (!function_exists('faqly_is_special_admin_page')) {
         }
 
         if ('post.php' === $hook || 'post-new.php' === $hook) {
-            $screen = get_current_screen();
-            if ($screen && $screen->post_type === 'faqly_faq_group') {
-                return true;
-            }
+            return true;
         }
 
         if (isset($_GET['page'])) {
@@ -161,20 +158,6 @@ add_action('admin_enqueue_scripts', function () {
     }
 
     wp_add_inline_style('faqly-admin-styles', $css);
-});
-
-
-add_action('admin_footer', function () {
-
-    if (faqly_is_templates_page()) {
-        return;
-    }
-    ?>
-    <a href="<?php echo esc_url(admin_url('edit.php?post_type=faqly_faq_group&page=templates_page')); ?>"
-        class="faqly-premium-floating-btn button button-primary">
-        <?php echo esc_html('View Premium Templates'); ?>
-    </a>
-    <?php
 });
 
 function faqly_maybe_enqueue_scripts()
@@ -461,43 +444,5 @@ if (!function_exists('faqly_pro_label')) {
 
 
 
-add_action('in_admin_header', 'faqly_show_admin_topbar');
-function faqly_show_admin_topbar()
-{
-    if (!current_user_can('manage_options')) {
-        return;
-    }
-
-    $screen = get_current_screen();
-    if (isset($screen->base) && in_array($screen->base, ['post', 'post-new'], true)) {
-        return;
-    }
-
-    $theme = wp_get_theme();
-    $author = $theme->get('Author');
-    $textdomain = $theme->get('TextDomain');
-
-    $shop_url = FAQLY_PLUGIN_MAIN_URL . 'collections/wordpress-themes-shop';
-
-    if (strtolower(trim($author)) === 'drakearthur') {
-        $constant_name = strtoupper(str_replace('-', '_', $textdomain)) . '_PRO_THEME_URL';
-        if (defined($constant_name)) {
-            $shop_url = constant($constant_name);
-        }
-    } ?>
-
-    <div class="faqly-admin-topbar">
-        <span class="faqly-topbar-text">
-            <?php echo esc_html('🎉 Enjoy Flat 20% OFF on WordPress Themes – New Year Special! Use Code '); ?><strong>
-                <?php echo esc_html('"NY2026"'); ?>
-            </strong>
-            <?php echo esc_html(' ✨'); ?>
-        </span>
-        <a href="<?php echo esc_url($shop_url); ?>" target="_blank" class="faqly-topbar-btn">
-            <?php echo esc_html('Buy Now'); ?>
-        </a>
-    </div>
-
-<?php }
 
 

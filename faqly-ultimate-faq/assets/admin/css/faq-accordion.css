@@ -531,16 +531,16 @@ p.faqly-product-card-text {
 }
 
 li#toplevel_page_edit-post_type-faqly_faq_group ul li:last-child a {
-	background: #d71800;
-	color: #fff;
-	font-weight: 600;
-	text-align: center;
-	border-radius: 4px;
-	margin-left: 14px;
-	margin-right: 20px;
-	padding: 5px 10px;
-	font-size: 0.75rem !important;
-	margin-top: 4px;
+  background: #d71800;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 4px;
+  margin-left: 14px;
+  margin-right: 20px;
+  padding: 5px 10px;
+  font-size: 0.75rem !important;
+  margin-top: 4px;
 }
 
 li#toplevel_page_edit-post_type-faqly_faq_group ul li:last-child a:hover {
@@ -785,20 +785,22 @@ li#toplevel_page_edit-post_type-faqly_faq_group ul li:last-child a:hover {
     width: 85% !important;
   }
 }
-.faq-copy-id{
-  cursor:pointer;
+
+.faq-copy-id {
+  cursor: pointer;
 }
+
 #faqly-popup-overlay {
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:#00000080;
-  z-index:9999;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000080;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #faqly-popup-content {
@@ -811,28 +813,35 @@ li#toplevel_page_edit-post_type-faqly_faq_group ul li:last-child a:hover {
   position: relative;
   border: 2px solid rgba(226, 230, 235, 0.7);
 }
-#faqly-popup-content .faqly-popup-template-btn, #faqly-popup-content  .faqly-popup-bundle-btn {
+
+#faqly-popup-content .faqly-popup-template-btn,
+#faqly-popup-content .faqly-popup-bundle-btn {
   background: #d71800;
   border: none;
   border-radius: 30px;
   font-size: 20px;
   padding: 0px 50px;
 }
+
 .faqly-popup-wrap {
   display: flex;
   gap: 25px;
   justify-content: center;
 }
+
 #faqly-popup-content img {
   width: 100%;
 }
+
 #faqly-popup-content .faqly-popup-bundle-btn {
   background: rgba(2, 73, 133, 1);
 }
+
 #faqly-popup-content h2 {
   font-size: 25px;
   margin-bottom: 40px;
 }
+
 #faqly-popup-content .faqly-popup-dismiss {
   rotate: 45deg;
   position: absolute;
@@ -842,6 +851,7 @@ li#toplevel_page_edit-post_type-faqly_faq_group ul li:last-child a:hover {
   cursor: pointer;
   color: red;
 }
+
 .faqly-premium-floating-btn {
   background: #d71800 !important;
   border: none !important;
@@ -933,11 +943,11 @@ li#toplevel_page_edit-post_type-faqly_faq_group ul li:last-child a:hover {
   border-radius: 50%;
 }
 
-input:checked + .toggle-slider {
+input:checked+.toggle-slider {
   background-color: #007cba;
 }
 
-input:checked + .toggle-slider:before {
+input:checked+.toggle-slider:before {
   transform: translateX(26px);
 }
 
@@ -948,74 +958,87 @@ input:checked + .toggle-slider:before {
 }
 
 #faq_group_settings .postbox-header {
-    background: linear-gradient(to right, #024985, #0189f0);
+  background: linear-gradient(to right, #024985, #0189f0);
 }
 
 #faq_group_settings h2.hndle.ui-sortable-handle {
-    color: #fff;
+  color: #fff;
 }
 
 #faq_group_settings .handle-actions.hide-if-no-js button {
-    color: white;
+  color: white;
 }
 
 #faq_group_settings span.toggle-indicator {
-    color: white;
+  color: white;
 }
 
 #faq_group_settings #add-faq-btn {
-    background: #024985;
+  background: #024985;
 }
 
-#faqly-general-settings-tabs .nav-tabs .nav-item.show .nav-link,#faqly-general-settings-tabs .nav-tabs .nav-link.active,#faq_group_settings .nav-pills .nav-link.active,#faq_group_settings  .nav-pills .show>.nav-link,#faqly-tools-tabs .nav-link.active,#faqly-tools-tabs .show>.nav-link{
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid #024985;
-    background: #fff;
-    color: #024985;
-    box-shadow: 0px 0px 10px 2px #024985 inset;
-    border-right: 1px solid transparent;
-}
-#faqly-general-settings-tabs .nav-tabs .nav-link,#faq_group_settings .nav-pills .nav-link,#faqly-tools-tabs .nav-link {
-    background: linear-gradient(to right, #024985, #0189f0);
-    border-top: 1px solid #024985;
-    border-bottom: 1px solid #ddd;
-    border-right: 1px solid #e2e2e1;
-    color: #fff;
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 1.4;
+#faqly-general-settings-tabs .nav-tabs .nav-item.show .nav-link,
+#faqly-general-settings-tabs .nav-tabs .nav-link.active,
+#faq_group_settings .nav-pills .nav-link.active,
+#faq_group_settings .nav-pills .show>.nav-link,
+#faqly-tools-tabs .nav-link.active,
+#faqly-tools-tabs .show>.nav-link {
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid #024985;
+  background: #fff;
+  color: #024985;
+  box-shadow: 0px 0px 10px 2px #024985 inset;
+  border-right: 1px solid transparent;
 }
 
-#display-settings-tabs .nav-pills .nav-link.active,#display-settings-tabs .nav-pills .show>.nav-link, #typography-settings-tabs .nav-pills .nav-link.active, .nav-pills .show>.nav-item {
-    -webkit-box-shadow: inset 3px 0 #024985;
-    box-shadow: inset 3px 0 #024985;
-    color: #024985;
-    font-weight: 600;
-    border-right-color: #fff;
-    margin-right: -1px;
-    border-right: none;
-    border-radius: 0;
+#faqly-general-settings-tabs .nav-tabs .nav-link,
+#faq_group_settings .nav-pills .nav-link,
+#faqly-tools-tabs .nav-link {
+  background: linear-gradient(to right, #024985, #0189f0);
+  border-top: 1px solid #024985;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #e2e2e1;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
 }
+
+#display-settings-tabs .nav-pills .nav-link.active,
+#display-settings-tabs .nav-pills .show>.nav-link,
+#typography-settings-tabs .nav-pills .nav-link.active,
+.nav-pills .show>.nav-item {
+  -webkit-box-shadow: inset 3px 0 #024985;
+  box-shadow: inset 3px 0 #024985;
+  color: #024985;
+  font-weight: 600;
+  border-right-color: #fff;
+  margin-right: -1px;
+  border-right: none;
+  border-radius: 0;
+}
+
 #display-settings-tabs .nav-pills .nav-link {
-    margin-top: 0;
-    position: relative;
-    font-size: 13px;
-    color: #343434;
-    -moz-transition: all 0.2s;
-    -o-transition: all 0.2s;
-    -webkit-transition: all 0.2s;
-    transition: all 0.2s;
-    overflow: hidden;
-    background: #FBF7F6;
+  margin-top: 0;
+  position: relative;
+  font-size: 13px;
+  color: #343434;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  overflow: hidden;
+  background: #FBF7F6;
 }
 
-#display-settings-tabs .nav-pills .nav-item, #typography-settings-tabs .nav-pills .nav-link {
-    background: #FBF7F6;
-    margin: 5px 0;
-    border-bottom: 1px solid #DDDDDD;
+#display-settings-tabs .nav-pills .nav-item,
+#typography-settings-tabs .nav-pills .nav-link {
+  background: #FBF7F6;
+  margin: 5px 0;
+  border-bottom: 1px solid #DDDDDD;
 }
 
-#faqly-export-form button.btn.btn-primary.faqly-export-btn{
+#faqly-export-form button.btn.btn-primary.faqly-export-btn {
   background-color: #024985;
   color: #fff;
 }
@@ -1029,7 +1052,8 @@ input:checked + .toggle-slider:before {
 
 /* new for lock */
 .faqly-pro-label {
-  color: #d63638; /* WordPress red */
+  color: #d63638;
+  /* WordPress red */
   font-weight: bold;
   margin-left: 5px;
   text-decoration: none;
@@ -1046,13 +1070,13 @@ input:checked + .toggle-slider:before {
 }
 
 .faqly-pro-plugin {
-	background: #fff;
-	border: 1px solid #ddd;
-	border-radius: 10px;
-	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-	text-align: center;
-	padding: 20px;
-	max-width: 500px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  max-width: 500px;
 }
 
 .faqly-po-img-wrap img {
@@ -1074,8 +1098,8 @@ input:checked + .toggle-slider:before {
 }
 
 .buy-button:hover {
-	/* background-color: #001a26; */
-	color: white;
+  /* background-color: #001a26; */
+  color: white;
 }
 
 .faqly-premium-floating-btn {
@@ -1108,7 +1132,7 @@ input:checked + .toggle-slider:before {
   font-weight: bold;
   text-transform: uppercase;
   padding: 8px 16px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
 }
 
@@ -1123,23 +1147,24 @@ a#pro-tab {
   background: #d71800 !important;
 }
 
-#faqly_buy_pro_metabox .postbox-header{
+#faqly_buy_pro_metabox .postbox-header {
   background: linear-gradient(to right, #024985, #0189f0) !important;
 }
 
-#faqly_buy_pro_metabox .postbox-header h2{
+#faqly_buy_pro_metabox .postbox-header h2 {
   color: #fff !important;
 }
 
 #faqly_buy_pro_metabox .handle-order-higher .order-higher-indicator::before,
 #faqly_buy_pro_metabox .handle-order-lower .order-lower-indicator::before,
-#faqly_buy_pro_metabox .handlediv .toggle-indicator::before{
+#faqly_buy_pro_metabox .handlediv .toggle-indicator::before {
   color: #ffffff !important;
 }
+
 /* Topbar wrapper */
 .faqly-admin-topbar {
   background: linear-gradient(117deg, rgb(2, 73, 133), rgb(1, 137, 240) 99%);
-  color:  #ffed00;
+  color: #ffed00;
   font-size: 25px;
   font-weight: 600;
   text-align: center;
@@ -1171,3 +1196,13 @@ a#pro-tab {
   color: #d62828;
 }
 
+.faqly-typography-setting-message {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffba00;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #856404;
+  font-weight: 500;
+}

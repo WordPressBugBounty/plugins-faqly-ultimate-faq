@@ -13,10 +13,12 @@ function faqly_render_woocommerce_faqs_page()
     // Check if WooCommerce is active
     if (!class_exists('WooCommerce')) {
         ?>
-        <div class="wrap">
+        <div class="wrap faqly-admin-wrapper">
             <h1><?php esc_html_e('Woocommerce FAQs', 'faqly-ultimate-faq'); ?></h1>
-            <div class="notice notice-warning">
-                <p><?php esc_html_e('WooCommerce is not active. Please install and activate WooCommerce to use these settings.', 'faqly-ultimate-faq'); ?>
+
+            <div class="faqly-warning-box">
+                <p>
+                    <?php esc_html_e('WooCommerce is not active. Please install and activate WooCommerce to use these settings.', 'faqly-ultimate-faq'); ?>
                 </p>
             </div>
         </div>
@@ -173,7 +175,8 @@ function faqly_render_woocommerce_faqs_page()
                                                     <label><?php esc_html_e('Select FAQ Group', 'faqly-ultimate-faq'); ?></label>
                                                     <select class="form-control"
                                                         name="faq_tabs[<?php echo esc_attr($tab_index); ?>][group_id]" <?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?>>
-                                                        <option value=""><?php esc_html_e('Select FAQ Group', 'faqly-ultimate-faq'); ?>
+                                                        <option value="">
+                                                            <?php esc_html_e('Select FAQ Group', 'faqly-ultimate-faq'); ?>
                                                         </option>
                                                         <?php
                                                         $faq_groups = get_posts(array(

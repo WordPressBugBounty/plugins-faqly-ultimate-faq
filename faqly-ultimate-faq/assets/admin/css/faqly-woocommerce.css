@@ -33,3 +33,21 @@
         width: 100%;
     }
 }
+
+.faqly-warning-box {
+    margin-top: 20px;
+    padding: 15px 20px;
+    background-color: #fff4e5;
+    border-left: 4px solid #ff9800;
+    border-radius: 4px;
+}
+
+.faqly-warning-box p {
+    margin: 0;
+    font-size: 14px;
+    color: #663c00;
+}
+
+.faqly-admin-wrapper h1 {
+    margin-bottom: 20px;
+}

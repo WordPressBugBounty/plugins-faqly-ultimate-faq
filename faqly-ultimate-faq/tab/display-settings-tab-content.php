@@ -32,9 +32,6 @@ if (!defined('ABSPATH')) {
             <!-- Title & Description Settings -->
             <div class="display-settings-section">
                 <h4>Title & Description Settings</h4>
-                <p class="description">Configure how titles and descriptions are displayed in your FAQ accordions.</p>
-
-
                 <!-- Use Theme Default Style Settings -->
                 <div class="setting-group">
                     <label class="setting-label">

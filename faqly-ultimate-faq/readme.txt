@@ -4,7 +4,7 @@ Tags: faq, faqs, accordion, faq-shortcode, faq-block
 Requires at least: 5.2
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.1.6
+Stable tag: 1.1.7
 License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -136,6 +136,10 @@ Follow these simple steps to install the FAQly – Ultimate FAQ Plugin:
 If you need any further assistance, feel free to check our documentation or reach out for support.
 
 == Changelog ==
+
+= 1.1.7 - 28-02-2026 =
+* Improved admin UI and notice handling.
+* Minor improvements and fixes.
 
 = 1.1.6 - 27-01-2026 =
 * Minor Bugs Fixes.
