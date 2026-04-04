@@ -36,8 +36,8 @@ if (!$faqly_is_selected_theme_valid) {
 
 ?>
 <div class="theme-settings-content">
-    <h3>Select FAQ Theme</h3>
-    <p>Choose from our pre-designed themes to style your FAQ accordion.</p>
+    <h3><?php esc_html_e( 'Select FAQ Theme', 'faqly-ultimate-faq' ); ?></h3>
+    <p><?php esc_html_e( 'Choose from our pre-designed themes to style your FAQ accordion.', 'faqly-ultimate-faq' ); ?></p>
     
     <div class="row theme-selection-container">
         <?php foreach ($faqly_themes as $faqly_theme_slug => $faqly_theme_name):
@@ -59,11 +59,11 @@ if (!$faqly_is_selected_theme_valid) {
                         <h5 class="card-title mt-3"><?php echo esc_html($faqly_theme_name); ?> <?php echo $faqly_is_pro_theme ? wp_kses_post(faqly_pro_label($faqly_is_premium_user)) : ''; ?></h5>
                         <div class="theme-selection-indicator">
                             <?php if ($faqly_is_selected): ?>
-                                <span class="badge bg-success">Selected</span>
+                                <span class="badge bg-success"><?php esc_html_e( 'Selected', 'faqly-ultimate-faq' ); ?></span>
                             <?php elseif ($faqly_is_selectable): ?>
-                                <span class="badge bg-secondary">Select</span>
+                                <span class="badge bg-secondary"><?php esc_html_e( 'Select', 'faqly-ultimate-faq' ); ?></span>
                             <?php else: ?>
-                                <span class="badge bg-secondary">Select</span>
+                                <span class="badge bg-secondary"><?php esc_html_e( 'Select', 'faqly-ultimate-faq' ); ?></span>
                             <?php endif; ?>
                         </div>
                     </div>

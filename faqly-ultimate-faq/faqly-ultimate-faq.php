@@ -3,7 +3,7 @@
  * Plugin Name:       FAQly – Ultimate FAQ
  * Plugin URI:        https://www.seothemesexpert.com/products/best-wordpress-faq-plugin-free
  * Description:       A plugin to manage FAQs and display them as an accordion using a shortcode.
- * Version:           1.1.7
+ * Version:           1.1.8
  * Requires at least: 5.2
  * Requires PHP:      7.4
  * Author:            drakearthur
@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
 }
 define('FAQLY_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('FAQLY_PLUGIN_URL', plugin_dir_url(__FILE__));
-define('FAQLY_PLUGIN_VERSION', '1.1.7');
+define('FAQLY_PLUGIN_VERSION', '1.1.8');
 
 define('FAQLY_PLUGIN_MAIN_URL', 'https://www.seothemesexpert.com/');
 define('FAQLY_PLUGIN_LICENSE_URL', 'https://license.seothemesexpert.com/api/public/');

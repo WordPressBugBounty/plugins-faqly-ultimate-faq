@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
             <button class="nav-link active" id="section-title-typography-tab" data-bs-toggle="pill"
                 data-bs-target="#section-title-typography" type="button" role="tab"
                 aria-controls="section-title-typography" aria-selected="true">
-                Section Typography
+                <?php esc_html_e( 'Section Typography', 'faqly-ultimate-faq' ); ?>
             </button>
         </li>
     </ul>
@@ -22,19 +22,19 @@ if (!defined('ABSPATH')) {
             <div class="typography-settings-section">
 
                 <div class="faqly-typography-setting-message">
-                    <strong>Important:</strong> Before using these typography settings, you must
-                    <strong>disable "Use Theme Default Style Settings"</strong> in the <strong>Display Settings
-                        Tab</strong>.
+                    <strong><?php esc_html_e( 'Important:', 'faqly-ultimate-faq' ); ?></strong> <?php esc_html_e( 'Before using these typography settings, you must', 'faqly-ultimate-faq' ); ?>
+                    <strong><?php esc_html_e( 'disable "Use Theme Default Style Settings"', 'faqly-ultimate-faq' ); ?></strong> <?php esc_html_e( 'in the', 'faqly-ultimate-faq' ); ?> <strong>Display Settings
+                        <?php esc_html_e( 'Tab', 'faqly-ultimate-faq' ); ?></strong>.
                 </div>
 
-                <h4>Item Title Typography</h4>
+                <h4><?php esc_html_e( 'Item Title Typography', 'faqly-ultimate-faq' ); ?></h4>
 
                 <!-- Load Google Font Toggle -->
                 <div class="setting-group">
                     <label for="faq_item_title_load_font" class="setting-label">
-                        <strong>Load Accordion Item Title Font</strong>
-                        <span class="description">Enable/disable Google fonts for the accordion item
-                            title</span><?php echo wp_kses_post(faqly_pro_label($faqly_is_premium_user)); ?>
+                        <strong><?php esc_html_e( 'Load Accordion Item Title Font', 'faqly-ultimate-faq' ); ?></strong>
+                        <span class="description"><?php esc_html_e( 'Enable/disable Google fonts for the accordion item
+                            title', 'faqly-ultimate-faq' ); ?></span><?php echo wp_kses_post(faqly_pro_label($faqly_is_premium_user)); ?>
                     </label>
                     <?php
                     $faqly_faq_item_title_load_font = get_post_meta(get_the_ID(), '_faq_item_title_load_font', true);
@@ -53,16 +53,16 @@ if (!defined('ABSPATH')) {
                 <!-- Item Title Font Properties -->
                 <div class="setting-group">
                     <label class="setting-label">
-                        <strong>Item Title Font</strong>
-                        <span class="description">Set font properties for accordion item
-                            titles</span><?php echo wp_kses_post(faqly_pro_label($faqly_is_premium_user)); ?>
+                        <strong><?php esc_html_e( 'Item Title Font', 'faqly-ultimate-faq' ); ?></strong>
+                        <span class="description"><?php esc_html_e( 'Set font properties for accordion item
+                            titles', 'faqly-ultimate-faq' ); ?></span><?php echo wp_kses_post(faqly_pro_label($faqly_is_premium_user)); ?>
                     </label>
                     <div class="font-properties-wrapper"
                         style="display: flex; flex-wrap: wrap; gap: 15px; align-items: end;">
                         <!-- Font Family -->
                         <div class="font-property-wrapper">
-                            <label for="faq_item_title_font_family" style="font-size: 12px; margin-bottom: 2px;">Font
-                                Family</label>
+                            <label for="faq_item_title_font_family" style="font-size: 12px; margin-bottom: 2px;"><?php esc_html_e( 'Font
+                                Family', 'faqly-ultimate-faq' ); ?></label>
                             <?php
                             $faqly_faq_item_title_font_family = get_post_meta(get_the_ID(), '_faq_item_title_font_family', true) ?: 'Arial';
                             $faqly_google_fonts = [
@@ -100,8 +100,8 @@ if (!defined('ABSPATH')) {
 
                         <!-- Font Style -->
                         <div class="font-property-wrapper">
-                            <label for="faq_item_title_font_style" style="font-size: 12px; margin-bottom: 2px;">Font
-                                Style</label>
+                            <label for="faq_item_title_font_style" style="font-size: 12px; margin-bottom: 2px;"><?php esc_html_e( 'Font
+                                Style', 'faqly-ultimate-faq' ); ?></label>
                             <?php
                             $faqly_faq_item_title_font_style = get_post_meta(get_the_ID(), '_faq_item_title_font_style', true) ?: 'normal';
                             ?>
@@ -109,80 +109,80 @@ if (!defined('ABSPATH')) {
                                 <?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?>
                                 style="width: 100px;">
                                 <option value="normal" <?php selected($faqly_faq_item_title_font_style, 'normal'); ?>>
-                                    Normal
+                                    <?php esc_html_e( 'Normal', 'faqly-ultimate-faq' ); ?>
                                 </option>
                                 <option value="italic" <?php selected($faqly_faq_item_title_font_style, 'italic'); ?>>
-                                    Italic
+                                    <?php esc_html_e( 'Italic', 'faqly-ultimate-faq' ); ?>
                                 </option>
                                 <option value="oblique" <?php selected($faqly_faq_item_title_font_style, 'oblique'); ?>>
-                                    Oblique</option>
+                                    <?php esc_html_e( 'Oblique', 'faqly-ultimate-faq' ); ?></option>
                             </select>
                         </div>
 
                         <!-- Font Subset -->
                         <div class="font-property-wrapper">
                             <label for="faq_item_title_font_subset"
-                                style="font-size: 12px; margin-bottom: 2px;">Subset</label>
+                                style="font-size: 12px; margin-bottom: 2px;"><?php esc_html_e( 'Subset', 'faqly-ultimate-faq' ); ?></label>
                             <?php
                             $faqly_faq_item_title_font_subset = get_post_meta(get_the_ID(), '_faq_item_title_font_subset', true) ?: 'latin';
                             ?>
                             <select name="faq_item_title_font_subset" id="faq_item_title_font_subset" <?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?> class="form-control"
                                 style="width: 100px;">
                                 <option value="latin" <?php selected($faqly_faq_item_title_font_subset, 'latin'); ?>>
-                                    Latin
+                                    <?php esc_html_e( 'Latin', 'faqly-ultimate-faq' ); ?>
                                 </option>
                                 <option value="latin-ext" <?php selected($faqly_faq_item_title_font_subset, 'latin-ext'); ?>>
-                                    Latin Ext</option>
+                                    <?php esc_html_e( 'Latin Ext', 'faqly-ultimate-faq' ); ?></option>
                                 <option value="cyrillic" <?php selected($faqly_faq_item_title_font_subset, 'cyrillic'); ?>>
-                                    Cyrillic</option>
-                                <option value="cyrillic-ext" <?php selected($faqly_faq_item_title_font_subset, 'cyrillic-ext'); ?>>Cyrillic Ext</option>
+                                    <?php esc_html_e( 'Cyrillic', 'faqly-ultimate-faq' ); ?></option>
+                                <option value="cyrillic-ext" <?php selected($faqly_faq_item_title_font_subset, 'cyrillic-ext'); ?>><?php esc_html_e( 'Cyrillic Ext', 'faqly-ultimate-faq' ); ?></option>
                                 <option value="greek" <?php selected($faqly_faq_item_title_font_subset, 'greek'); ?>>
-                                    Greek
+                                    <?php esc_html_e( 'Greek', 'faqly-ultimate-faq' ); ?>
                                 </option>
                                 <option value="greek-ext" <?php selected($faqly_faq_item_title_font_subset, 'greek-ext'); ?>>
-                                    Greek Ext</option>
-                                <option value="vietnamese" <?php selected($faqly_faq_item_title_font_subset, 'vietnamese'); ?>>Vietnamese</option>
+                                    <?php esc_html_e( 'Greek Ext', 'faqly-ultimate-faq' ); ?></option>
+                                <option value="vietnamese" <?php selected($faqly_faq_item_title_font_subset, 'vietnamese'); ?>><?php esc_html_e( 'Vietnamese', 'faqly-ultimate-faq' ); ?></option>
                             </select>
                         </div>
 
                         <!-- Text Align -->
                         <div class="font-property-wrapper">
-                            <label for="faq_item_title_text_align" style="font-size: 12px; margin-bottom: 2px;">Text
-                                Align</label>
+                            <label for="faq_item_title_text_align" style="font-size: 12px; margin-bottom: 2px;"><?php esc_html_e( 'Text
+                                Align', 'faqly-ultimate-faq' ); ?></label>
                             <?php
                             $faqly_faq_item_title_text_align = get_post_meta(get_the_ID(), '_faq_item_title_text_align', true) ?: 'left';
                             ?>
                             <select name="faq_item_title_text_align" id="faq_item_title_text_align" class="form-control"
                                 <?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?>
                                 style="width: 100px;">
-                                <option value="left" <?php selected($faqly_faq_item_title_text_align, 'left'); ?>>Left
+                                <option value="left" <?php selected($faqly_faq_item_title_text_align, 'left'); ?>><?php esc_html_e( 'Left', 'faqly-ultimate-faq' ); ?>
                                 </option>
                                 <option value="center" <?php selected($faqly_faq_item_title_text_align, 'center'); ?>>
-                                    Center
+                                    <?php esc_html_e( 'Center', 'faqly-ultimate-faq' ); ?>
                                 </option>
                                 <option value="right" <?php selected($faqly_faq_item_title_text_align, 'right'); ?>>
-                                    Right
+                                    <?php esc_html_e( 'Right', 'faqly-ultimate-faq' ); ?>
                                 </option>
                                 <option value="justify" <?php selected($faqly_faq_item_title_text_align, 'justify'); ?>>
-                                    Justify</option>
+                                    <?php esc_html_e( 'Justify', 'faqly-ultimate-faq' ); ?></option>
                             </select>
                         </div>
 
                         <!-- Text Transform -->
                         <div class="font-property-wrapper">
-                            <label for="faq_item_title_text_transform" style="font-size: 12px; margin-bottom: 2px;">Text
-                                Transform</label>
+                            <label for="faq_item_title_text_transform" style="font-size: 12px; margin-bottom: 2px;"><?php esc_html_e( 'Text
+                                Transform', 'faqly-ultimate-faq' ); ?></label>
                             <?php
                             $faqly_faq_item_title_text_transform = get_post_meta(get_the_ID(), '_faq_item_title_text_transform', true) ?: 'none';
                             ?>
                             <select name="faq_item_title_text_transform" id="faq_item_title_text_transform" <?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?> class="form-control"
                                 style="width: 120px;">
                                 <option value="none" <?php selected($faqly_faq_item_title_text_transform, 'none'); ?>>
-                                    None
+                                    <?php esc_html_e( 'None', 'faqly-ultimate-faq' ); ?>
                                 </option>
-                                <option value="capitalize" <?php selected($faqly_faq_item_title_text_transform, 'capitalize'); ?>>Capitalize</option>
-                                <option value="uppercase" <?php selected($faqly_faq_item_title_text_transform, 'uppercase'); ?>>Uppercase</option>
-                                <option value="lowercase" <?php selected($faqly_faq_item_title_text_transform, 'lowercase'); ?>>Lowercase</option>
+                                <option value="capitalize" <?php selected($faqly_faq_item_title_text_transform, 'capitalize'); ?>><?php esc_html_e( 'Capitalize', 'faqly-ultimate-faq' ); ?></option>
+                                <option value="uppercase" <?php selected($faqly_faq_item_title_text_transform, 'uppercase'); ?>><?php esc_html_e( 'Uppercase', 'faqly-ultimate-faq' ); ?></option>
+                                <option value="lowercase" <?php selected($faqly_faq_item_title_text_transform, 'lowercase'); ?>><?php esc_html_e( 'Lowercase', 'faqly-ultimate-faq' ); ?></option>
                             </select>
                         </div>
                     </div>
@@ -194,15 +194,15 @@ if (!defined('ABSPATH')) {
             <!-- description start -->
 
             <div class="typography-settings-section">
-                <h4>Item Description Typography</h4>
-                <p class="description">Configure typography settings for accordion item descriptions.</p>
+                <h4><?php esc_html_e( 'Item Description Typography', 'faqly-ultimate-faq' ); ?></h4>
+                <p class="description"><?php esc_html_e( 'Configure typography settings for accordion item descriptions.', 'faqly-ultimate-faq' ); ?></p>
 
                 <!-- Load Google Font Toggle -->
                 <div class="setting-group">
                     <label for="faq_item_desc_load_font" class="setting-label">
-                        <strong>Load Accordion Item Description Font</strong>
-                        <span class="description">Enable/disable Google fonts for the accordion item
-                            description</span><?php echo wp_kses_post(faqly_pro_label($faqly_is_premium_user)); ?>
+                        <strong><?php esc_html_e( 'Load Accordion Item Description Font', 'faqly-ultimate-faq' ); ?></strong>
+                        <span class="description"><?php esc_html_e( 'Enable/disable Google fonts for the accordion item
+                            description', 'faqly-ultimate-faq' ); ?></span><?php echo wp_kses_post(faqly_pro_label($faqly_is_premium_user)); ?>
                     </label>
                     <?php
                     $faqly_faq_item_desc_load_font = get_post_meta(get_the_ID(), '_faq_item_desc_load_font', true);
@@ -221,16 +221,16 @@ if (!defined('ABSPATH')) {
                 <!-- Item Description Font Properties -->
                 <div class="setting-group">
                     <label class="setting-label">
-                        <strong>Description Font</strong>
-                        <span class="description">Set font properties for accordion item
-                            descriptions</span><?php echo wp_kses_post(faqly_pro_label($faqly_is_premium_user)); ?>
+                        <strong><?php esc_html_e( 'Description Font', 'faqly-ultimate-faq' ); ?></strong>
+                        <span class="description"><?php esc_html_e( 'Set font properties for accordion item
+                            descriptions', 'faqly-ultimate-faq' ); ?></span><?php echo wp_kses_post(faqly_pro_label($faqly_is_premium_user)); ?>
                     </label>
                     <div class="font-properties-wrapper"
                         style="display: flex; flex-wrap: wrap; gap: 15px; align-items: end;">
                         <!-- Font Family -->
                         <div class="font-property-wrapper">
-                            <label for="faq_item_desc_font_family" style="font-size: 12px; margin-bottom: 2px;">Font
-                                Family</label>
+                            <label for="faq_item_desc_font_family" style="font-size: 12px; margin-bottom: 2px;"><?php esc_html_e( 'Font
+                                Family', 'faqly-ultimate-faq' ); ?></label>
                             <?php
                             $faqly_faq_item_desc_font_family = get_post_meta(get_the_ID(), '_faq_item_desc_font_family', true) ?: 'Arial';
                             ?>
@@ -246,8 +246,8 @@ if (!defined('ABSPATH')) {
 
                         <!-- Font Style -->
                         <div class="font-property-wrapper">
-                            <label for="faq_item_desc_font_style" style="font-size: 12px; margin-bottom: 2px;">Font
-                                Style</label>
+                            <label for="faq_item_desc_font_style" style="font-size: 12px; margin-bottom: 2px;"><?php esc_html_e( 'Font
+                                Style', 'faqly-ultimate-faq' ); ?></label>
                             <?php
                             $faqly_faq_item_desc_font_style = get_post_meta(get_the_ID(), '_faq_item_desc_font_style', true) ?: 'normal';
                             ?>
@@ -255,13 +255,13 @@ if (!defined('ABSPATH')) {
                                 <?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?>
                                 style="width: 100px;">
                                 <option value="normal" <?php selected($faqly_faq_item_desc_font_style, 'normal'); ?>>
-                                    Normal
+                                    <?php esc_html_e( 'Normal', 'faqly-ultimate-faq' ); ?>
                                 </option>
                                 <option value="italic" <?php selected($faqly_faq_item_desc_font_style, 'italic'); ?>>
-                                    Italic
+                                    <?php esc_html_e( 'Italic', 'faqly-ultimate-faq' ); ?>
                                 </option>
                                 <option value="oblique" <?php selected($faqly_faq_item_desc_font_style, 'oblique'); ?>>
-                                    Oblique
+                                    <?php esc_html_e( 'Oblique', 'faqly-ultimate-faq' ); ?>
                                 </option>
                             </select>
                         </div>
@@ -269,7 +269,7 @@ if (!defined('ABSPATH')) {
                         <!-- Font Subset -->
                         <div class="font-property-wrapper">
                             <label for="faq_item_desc_font_subset"
-                                style="font-size: 12px; margin-bottom: 2px;">Subset</label>
+                                style="font-size: 12px; margin-bottom: 2px;"><?php esc_html_e( 'Subset', 'faqly-ultimate-faq' ); ?></label>
                             <?php
                             $faqly_faq_item_desc_font_subset = get_post_meta(get_the_ID(), '_faq_item_desc_font_subset', true) ?: 'latin';
                             ?>
@@ -277,61 +277,61 @@ if (!defined('ABSPATH')) {
                                 <?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?>
                                 style="width: 100px;">
                                 <option value="latin" <?php selected($faqly_faq_item_desc_font_subset, 'latin'); ?>>
-                                    Latin
+                                    <?php esc_html_e( 'Latin', 'faqly-ultimate-faq' ); ?>
                                 </option>
                                 <option value="latin-ext" <?php selected($faqly_faq_item_desc_font_subset, 'latin-ext'); ?>>
-                                    Latin Ext</option>
+                                    <?php esc_html_e( 'Latin Ext', 'faqly-ultimate-faq' ); ?></option>
                                 <option value="cyrillic" <?php selected($faqly_faq_item_desc_font_subset, 'cyrillic'); ?>>
-                                    Cyrillic</option>
-                                <option value="cyrillic-ext" <?php selected($faqly_faq_item_desc_font_subset, 'cyrillic-ext'); ?>>Cyrillic Ext</option>
+                                    <?php esc_html_e( 'Cyrillic', 'faqly-ultimate-faq' ); ?></option>
+                                <option value="cyrillic-ext" <?php selected($faqly_faq_item_desc_font_subset, 'cyrillic-ext'); ?>><?php esc_html_e( 'Cyrillic Ext', 'faqly-ultimate-faq' ); ?></option>
                                 <option value="greek" <?php selected($faqly_faq_item_desc_font_subset, 'greek'); ?>>
-                                    Greek
+                                    <?php esc_html_e( 'Greek', 'faqly-ultimate-faq' ); ?>
                                 </option>
                                 <option value="greek-ext" <?php selected($faqly_faq_item_desc_font_subset, 'greek-ext'); ?>>
-                                    Greek Ext</option>
+                                    <?php esc_html_e( 'Greek Ext', 'faqly-ultimate-faq' ); ?></option>
                                 <option value="vietnamese" <?php selected($faqly_faq_item_desc_font_subset, 'vietnamese'); ?>>
-                                    Vietnamese</option>
+                                    <?php esc_html_e( 'Vietnamese', 'faqly-ultimate-faq' ); ?></option>
                             </select>
                         </div>
 
                         <!-- Text Align -->
                         <div class="font-property-wrapper">
-                            <label for="faq_item_desc_text_align" style="font-size: 12px; margin-bottom: 2px;">Text
-                                Align</label>
+                            <label for="faq_item_desc_text_align" style="font-size: 12px; margin-bottom: 2px;"><?php esc_html_e( 'Text
+                                Align', 'faqly-ultimate-faq' ); ?></label>
                             <?php
                             $faqly_faq_item_desc_text_align = get_post_meta(get_the_ID(), '_faq_item_desc_text_align', true) ?: 'left';
                             ?>
                             <select name="faq_item_desc_text_align" id="faq_item_desc_text_align" class="form-control"
                                 <?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?>
                                 style="width: 100px;">
-                                <option value="left" <?php selected($faqly_faq_item_desc_text_align, 'left'); ?>>Left
+                                <option value="left" <?php selected($faqly_faq_item_desc_text_align, 'left'); ?>><?php esc_html_e( 'Left', 'faqly-ultimate-faq' ); ?>
                                 </option>
                                 <option value="center" <?php selected($faqly_faq_item_desc_text_align, 'center'); ?>>
-                                    Center
+                                    <?php esc_html_e( 'Center', 'faqly-ultimate-faq' ); ?>
                                 </option>
-                                <option value="right" <?php selected($faqly_faq_item_desc_text_align, 'right'); ?>>Right
+                                <option value="right" <?php selected($faqly_faq_item_desc_text_align, 'right'); ?>><?php esc_html_e( 'Right', 'faqly-ultimate-faq' ); ?>
                                 </option>
                                 <option value="justify" <?php selected($faqly_faq_item_desc_text_align, 'justify'); ?>>
-                                    Justify
+                                    <?php esc_html_e( 'Justify', 'faqly-ultimate-faq' ); ?>
                                 </option>
                             </select>
                         </div>
 
                         <!-- Text Transform -->
                         <div class="font-property-wrapper">
-                            <label for="faq_item_desc_text_transform" style="font-size: 12px; margin-bottom: 2px;">Text
-                                Transform</label>
+                            <label for="faq_item_desc_text_transform" style="font-size: 12px; margin-bottom: 2px;"><?php esc_html_e( 'Text
+                                Transform', 'faqly-ultimate-faq' ); ?></label>
                             <?php
                             $faqly_faq_item_desc_text_transform = get_post_meta(get_the_ID(), '_faq_item_desc_text_transform', true) ?: 'none';
                             ?>
                             <select name="faq_item_desc_text_transform" id="faq_item_desc_text_transform" <?php echo esc_attr(faqly_field_disabled_attr($faqly_is_premium_user)); ?> class="form-control"
                                 style="width: 120px;">
                                 <option value="none" <?php selected($faqly_faq_item_desc_text_transform, 'none'); ?>>
-                                    None
+                                    <?php esc_html_e( 'None', 'faqly-ultimate-faq' ); ?>
                                 </option>
-                                <option value="capitalize" <?php selected($faqly_faq_item_desc_text_transform, 'capitalize'); ?>>Capitalize</option>
-                                <option value="uppercase" <?php selected($faqly_faq_item_desc_text_transform, 'uppercase'); ?>>Uppercase</option>
-                                <option value="lowercase" <?php selected($faqly_faq_item_desc_text_transform, 'lowercase'); ?>>Lowercase</option>
+                                <option value="capitalize" <?php selected($faqly_faq_item_desc_text_transform, 'capitalize'); ?>><?php esc_html_e( 'Capitalize', 'faqly-ultimate-faq' ); ?></option>
+                                <option value="uppercase" <?php selected($faqly_faq_item_desc_text_transform, 'uppercase'); ?>><?php esc_html_e( 'Uppercase', 'faqly-ultimate-faq' ); ?></option>
+                                <option value="lowercase" <?php selected($faqly_faq_item_desc_text_transform, 'lowercase'); ?>><?php esc_html_e( 'Lowercase', 'faqly-ultimate-faq' ); ?></option>
                             </select>
                         </div>
                     </div>

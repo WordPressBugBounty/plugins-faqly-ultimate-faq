@@ -27,21 +27,21 @@ class Faqly_General_Settings_Metabox
         <div id="faqly-general-settings-tabs">
             <ul class="nav nav-tabs" id="faqlySettingsTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="accordion-settings-tab" data-bs-toggle="tab" data-bs-target="#accordion-settings" type="button" role="tab" aria-controls="accordion-settings" aria-selected="true">Accordion Settings</button>
+                    <button class="nav-link active" id="accordion-settings-tab" data-bs-toggle="tab" data-bs-target="#accordion-settings" type="button" role="tab" aria-controls="accordion-settings" aria-selected="true"><?php esc_html_e( 'Accordion Settings', 'faqly-ultimate-faq' ); ?></button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="theme-settings-tab" data-bs-toggle="tab" data-bs-target="#theme-settings" type="button" role="tab" aria-controls="theme-settings" aria-selected="false">Theme Settings</button>
+                    <button class="nav-link" id="theme-settings-tab" data-bs-toggle="tab" data-bs-target="#theme-settings" type="button" role="tab" aria-controls="theme-settings" aria-selected="false"><?php esc_html_e( 'Theme Settings', 'faqly-ultimate-faq' ); ?></button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="display-settings-tab" data-bs-toggle="tab" data-bs-target="#display-settings" type="button" role="tab" aria-controls="display-settings" aria-selected="false">Display Settings</button>
+                    <button class="nav-link" id="display-settings-tab" data-bs-toggle="tab" data-bs-target="#display-settings" type="button" role="tab" aria-controls="display-settings" aria-selected="false"><?php esc_html_e( 'Display Settings', 'faqly-ultimate-faq' ); ?></button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="typography-settings-tab" data-bs-toggle="tab" data-bs-target="#typography-settings" type="button" role="tab" aria-controls="typography-settings" aria-selected="false">Typography Settings</button>
+                    <button class="nav-link" id="typography-settings-tab" data-bs-toggle="tab" data-bs-target="#typography-settings" type="button" role="tab" aria-controls="typography-settings" aria-selected="false"><?php esc_html_e( 'Typography Settings', 'faqly-ultimate-faq' ); ?></button>
                 </li>
                 <?php if(!$faqly_is_premium_user){
                     ?>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="pro-tab" href="<?php echo esc_url( FAQLY_PLUGIN_MAIN_URL. 'products/the-ultimate-faq-wordpress-plugin'); ?>" target="_blank" role="tab" aria-selected="false">Upgrade To Pro!</a>
+                    <a class="nav-link" id="pro-tab" href="<?php echo esc_url( FAQLY_PLUGIN_MAIN_URL. 'products/the-ultimate-faq-wordpress-plugin'); ?>" target="_blank" role="tab" aria-selected="false"><?php esc_html_e( 'Upgrade To Pro!', 'faqly-ultimate-faq' ); ?> </a>
                 </li>
                 <?php
                 } ?>
@@ -52,16 +52,16 @@ class Faqly_General_Settings_Metabox
                     <!-- Accordion Settings Content -->
 
                     <div class="setting-group">
-                        <p class="setting-label"><strong>Layout Selection:</strong></p>
+                        <p class="setting-label"><strong><?php esc_html_e( 'Layout Selection:', 'faqly-ultimate-faq' ); ?></strong></p>
                         <div class="radio-group">
                             <label class="radio-option">
-                                <input type="radio" name="layout_selection" value="vertical" <?php checked($layout_selection, 'vertical'); ?> /> Vertical
+                                <input type="radio" name="layout_selection" value="vertical" <?php checked($layout_selection, 'vertical'); ?> /> <?php esc_html_e( 'Vertical', 'faqly-ultimate-faq' ); ?>
                             </label>
                             <label class="radio-option">
-                                <input type="radio" name="layout_selection" value="multicolumn" <?php checked($layout_selection, 'multicolumn'); ?><?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?> /> Multicolumn <?php echo wp_kses_post(faqly_pro_label( $faqly_is_premium_user )); ?>
+                                <input type="radio" name="layout_selection" value="multicolumn" <?php checked($layout_selection, 'multicolumn'); ?><?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?> /> <?php esc_html_e( 'Multicolumn', 'faqly-ultimate-faq' ); ?>  <?php echo wp_kses_post(faqly_pro_label( $faqly_is_premium_user )); ?>
                             </label>
                             <label class="radio-option">
-                                <input type="radio" name="layout_selection" value="horizontal" <?php checked($layout_selection, 'horizontal'); ?><?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?> /> Horizontal <?php echo wp_kses_post(faqly_pro_label( $faqly_is_premium_user )); ?>
+                                <input type="radio" name="layout_selection" value="horizontal" <?php checked($layout_selection, 'horizontal'); ?><?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?> /> <?php esc_html_e( 'Horizontal', 'faqly-ultimate-faq' ); ?>  <?php echo wp_kses_post(faqly_pro_label( $faqly_is_premium_user )); ?>
                             </label>
                            
                         </div>
@@ -70,13 +70,13 @@ class Faqly_General_Settings_Metabox
                     <hr class="setting-divider" />
 
                     <div class="setting-group">
-                        <p class="setting-label"><strong>Accordion Event:</strong></p>
+                        <p class="setting-label"><strong><?php esc_html_e( 'Accordion Event:', 'faqly-ultimate-faq' ); ?></strong></p>
                         <div class="radio-group">
                             <label class="radio-option">
-                                <input type="radio" name="accordion_event" value=".click" <?php checked($accordion_event, '.click'); ?> /> Click
+                                <input type="radio" name="accordion_event" value=".click" <?php checked($accordion_event, '.click'); ?> /> <?php esc_html_e( 'Click', 'faqly-ultimate-faq' ); ?>
                             </label>
                             <label class="radio-option">
-                                <input type="radio" name="accordion_event" value=".mouseover" <?php checked($accordion_event, '.mouseover'); ?> /> Mouseover
+                                <input type="radio" name="accordion_event" value=".mouseover" <?php checked($accordion_event, '.mouseover'); ?> /> <?php esc_html_e( 'Mouseover', 'faqly-ultimate-faq' ); ?>
                             </label>
                         </div>
                     </div>
@@ -84,16 +84,16 @@ class Faqly_General_Settings_Metabox
                     <hr class="setting-divider" />
 
                     <div class="setting-group">
-                        <p class="setting-label"><strong>Accordion Mode:</strong></p>
+                        <p class="setting-label"><strong><?php esc_html_e( 'Accordion Mode:', 'faqly-ultimate-faq' ); ?></strong></p>
                         <div class="radio-group">
                             <label class="radio-option">
-                                <input type="radio" name="accordion_mode" value=".first_open" <?php checked($accordion_mode, '.first_open'); ?> /> First Open
+                                <input type="radio" name="accordion_mode" value=".first_open" <?php checked($accordion_mode, '.first_open'); ?> /> <?php esc_html_e( 'First Open', 'faqly-ultimate-faq' ); ?> 
                             </label>
                             <label class="radio-option">
-                                <input type="radio" name="accordion_mode" value=".all_open" <?php checked($accordion_mode, '.all_open'); ?> /> All Open
+                                <input type="radio" name="accordion_mode" value=".all_open" <?php checked($accordion_mode, '.all_open'); ?> /> <?php esc_html_e( 'All Open', 'faqly-ultimate-faq' ); ?> 
                             </label>
                             <label class="radio-option">
-                                <input type="radio" name="accordion_mode" value=".all_folded" <?php checked($accordion_mode, '.all_folded'); ?> /> All Folded
+                                <input type="radio" name="accordion_mode" value=".all_folded" <?php checked($accordion_mode, '.all_folded'); ?> /> <?php esc_html_e( 'All Folded', 'faqly-ultimate-faq' ); ?> 
                             </label>
                         </div>
                     </div>
@@ -101,15 +101,15 @@ class Faqly_General_Settings_Metabox
                     <hr class="setting-divider" />
 
                     <div class="setting-group">
-                        <p class="setting-label"><strong>FAQ Search:</strong><?php echo wp_kses_post(faqly_pro_label( $faqly_is_premium_user )); ?></p>
+                        <p class="setting-label"><strong><?php esc_html_e( 'FAQ Search:', 'faqly-ultimate-faq' ); ?></strong><?php echo wp_kses_post(faqly_pro_label( $faqly_is_premium_user )); ?></p>
                         <div class="radio-group">
                             <label class="radio-option">
                                 <input type="radio" name="faq_search" value="enable" <?php checked($faq_search, 'enable'); ?><?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?> />
-                                Enable
+                                <?php esc_html_e( 'Enable', 'faqly-ultimate-faq' ); ?>
                             </label>
                             <label class="radio-option">
                                 <input type="radio" name="faq_search" value="disable" <?php checked($faq_search, 'disable'); ?><?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?> />
-                                Disable
+                                <?php esc_html_e( 'Disable', 'faqly-ultimate-faq' ); ?> 
                             </label>
                         </div>
                     </div>
@@ -117,19 +117,19 @@ class Faqly_General_Settings_Metabox
                     <hr class="setting-divider" />
 
                     <div class="setting-group">
-                        <p class="setting-label"><strong>Expand/Collapse All Button:</strong><?php echo wp_kses_post(faqly_pro_label( $faqly_is_premium_user )); ?></p>
+                        <p class="setting-label"><strong>  <?php esc_html_e( 'Expand/Collapse All Button:', 'faqly-ultimate-faq' ); ?></strong><?php echo wp_kses_post(faqly_pro_label( $faqly_is_premium_user )); ?></p>
                         <div class="radio-group">
                             <label class="radio-option">
                                 <input type="radio" name="faq_expand_collapse_all" value="enable"
                                     <?php checked(get_post_meta($post->ID, '_faq_expand_collapse_all', true) ?: 'disable', 'enable'); ?>
                                     <?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?> />
-                                Show
+                                <?php esc_html_e( 'Show', 'faqly-ultimate-faq' ); ?>
                             </label>
                             <label class="radio-option">
                                 <input type="radio" name="faq_expand_collapse_all" value="disable"
                                     <?php checked(get_post_meta($post->ID, '_faq_expand_collapse_all', true) ?: 'disable', 'disable'); ?>
                                     <?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?> />
-                                Hide
+                                <?php esc_html_e( 'Hide', 'faqly-ultimate-faq' ); ?> 
                             </label>
                         </div>
                     </div>
@@ -139,33 +139,33 @@ class Faqly_General_Settings_Metabox
                     <hr class="setting-divider" />
 
                     <div class="setting-group">
-                        <p class="setting-label"><strong>Multiple Active Together:</strong><?php echo wp_kses_post(faqly_pro_label( $faqly_is_premium_user )); ?></p>
+                        <p class="setting-label"><strong><?php esc_html_e( 'Multiple Active Together:', 'faqly-ultimate-faq' ); ?></strong><?php echo wp_kses_post(faqly_pro_label( $faqly_is_premium_user )); ?></p>
                         <div class="radio-group">
                             <label class="radio-option">
                                 <input type="radio" name="faq_multiple_active" value="enable" <?php checked(get_post_meta($post->ID, '_faq_multiple_active', true) ?: 'disable', 'enable'); ?> <?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?> />
-                                Enable
+                                <?php esc_html_e( 'Enable', 'faqly-ultimate-faq' ); ?>
                             </label>
                             <label class="radio-option">
                                 <input type="radio" name="faq_multiple_active" value="disable" <?php checked(get_post_meta($post->ID, '_faq_multiple_active', true) ?: 'disable', 'disable'); ?><?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?> />
-                                Disable
+                                <?php esc_html_e( 'Disable', 'faqly-ultimate-faq' ); ?> Disable
                             </label>
                         </div>
-                        <p class="setting-description">Don't collapse while expanding another item.</p>
+                        <p class="setting-description"><?php esc_html_e( "Don't collapse while expanding another item.", 'faqly-ultimate-faq' ); ?></p>
                     </div>
 
                     <hr class="setting-divider" />
 
                     <div class="setting-group">
-                        <p class="setting-label"><strong>Schema Markup:</strong><?php echo wp_kses_post(faqly_pro_label( $faqly_is_premium_user )); ?></p>
-                        <p class="setting-description">Schema Markup adds structured data to your Accordion FAQs, enhancing search engine visibility and improving the display of your Accordion FAQs in search results.</p>
+                        <p class="setting-label"><strong><?php esc_html_e( 'Schema Markup:', 'faqly-ultimate-faq' ); ?></strong><?php echo wp_kses_post(faqly_pro_label( $faqly_is_premium_user )); ?></p>
+                        <p class="setting-description"><?php esc_html_e( 'Schema Markup adds structured data to your Accordion FAQs, enhancing search engine visibility and improving the display of your Accordion FAQs in search results.', 'faqly-ultimate-faq' ); ?></p>
                         <div class="radio-group">
                             <label class="radio-option">
                                 <input type="radio" name="faq_schema_markup_enable" value="enable" <?php checked($faq_schema_markup_enable, 'enable'); ?><?php checked(get_post_meta($post->ID, '_faq_multiple_active', true) ?: 'disable', 'enable'); ?> <?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?> />
-                                Enable
+                                <?php esc_html_e( 'Enable', 'faqly-ultimate-faq' ); ?>
                             </label>
                             <label class="radio-option">
                                 <input type="radio" name="faq_schema_markup_enable" value="disable" <?php checked($faq_schema_markup_enable, 'disable'); ?><?php checked(get_post_meta($post->ID, '_faq_multiple_active', true) ?: 'disable', 'enable'); ?> <?php echo esc_attr(faqly_field_disabled_attr( $faqly_is_premium_user )); ?> />
-                                Disable
+                                <?php esc_html_e( 'Disable', 'faqly-ultimate-faq' ); ?>
                             </label>
                         </div>
                     </div>

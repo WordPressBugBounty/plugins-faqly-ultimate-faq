@@ -6,24 +6,24 @@ if (!defined('ABSPATH')) {
 <header>
     <div>
         <div>
-            <h2 class="faqly-templates">Website Templates</h2>
-            <p class="faqly-para">Experience the most innovative, intuitive, and lightning-fast WordPress theme. Create
-                your next website visually, quickly, and effortlessly.</p>
+            <h2 class="faqly-templates"><?php esc_html_e( 'Website Templates', 'faqly-ultimate-faq' ); ?></h2>
+            <p class="faqly-para"><?php esc_html_e( 'Experience the most innovative, intuitive, and lightning-fast WordPress theme. Create
+                your next website visually, quickly, and effortlessly.', 'faqly-ultimate-faq' ); ?></p>
         </div>
 
         <!-- new add -->
         <ul class="faqly-navigation nav nav-pills " id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-                    type="button" role="tab" aria-controls="pills-home" aria-selected="true">Premium Templates</button>
+                    type="button" role="tab" aria-controls="pills-home" aria-selected="true"><?php esc_html_e( 'Premium Templates', 'faqly-ultimate-faq' ); ?></button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="pills-pro-tab" data-bs-toggle="pill" data-bs-target="#pills-pro"
-                    type="button" role="tab" aria-controls="pills-pro" aria-selected="true">Faqly Pro</button>
+                    type="button" role="tab" aria-controls="pills-pro" aria-selected="true"><?php esc_html_e( 'Faqly Pro', 'faqly-ultimate-faq' ); ?></button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-                    type="button" role="tab" aria-controls="pills-pro" aria-selected="true">All Themes</button>
+                    type="button" role="tab" aria-controls="pills-pro" aria-selected="true"><?php esc_html_e( 'All Themes', 'faqly-ultimate-faq' ); ?></button>
             </li>
         </ul>
     </div>
@@ -39,11 +39,11 @@ if (!defined('ABSPATH')) {
                 <div class="search-container">
                     <input type="text" id="search-box" class="form-control" placeholder="Search products...">
                     <span class="dashicons dashicons-search"></span>
-                    <button id="search-button" class="btn btn-secondary">Search</button>
+                    <button id="search-button" class="btn btn-secondary"><?php esc_html_e( 'Search', 'faqly-ultimate-faq' ); ?></button>
                 </div>
                 <select id="api-response-dropdown" class="form-control">
 
-                    <option value="">Themes Categories</option>
+                    <option value=""><?php esc_html_e( 'Themes Categories', 'faqly-ultimate-faq' ); ?></option>
 
                 </select>
 
@@ -54,16 +54,16 @@ if (!defined('ABSPATH')) {
                 </div>
             </div>
 
-            <button id="load-more" class="btn btn-primary" style="display:none;">Load More</button>
+            <button id="load-more" class="btn btn-primary" style="display:none;"><?php esc_html_e( 'Load More', 'faqly-ultimate-faq' ); ?></button>
             <div class="support-container">
                 <div class="support-content">
-                    <h2>Need Assistance or Expert Advice?</h2>
-                    <p>Have a question or need assistance with the theme? Feel free to submit a support ticket or
-                        connect with our helpful community on our website.</p>
+                    <h2><?php esc_html_e( 'Need Assistance or Expert Advice?', 'faqly-ultimate-faq' ); ?></h2>
+                    <p><?php esc_html_e( 'Have a question or need assistance with the theme? Feel free to submit a support ticket or
+                        connect with our helpful community on our website.', 'faqly-ultimate-faq' ); ?></p>
                     <div class="support-buttons">
                         <a class="sup-btn" target="_blank"
-                            href="<?php echo esc_url(FAQLY_PLUGIN_MAIN_URL . 'pages/community'); ?>">Submit a Support
-                            Ticket</a>
+                            href="<?php echo esc_url(FAQLY_PLUGIN_MAIN_URL . 'pages/community'); ?>"><?php esc_html_e( 'Submit a Support
+                            Ticket', 'faqly-ultimate-faq' ); ?></a>
                     </div>
                 </div>
             </div>

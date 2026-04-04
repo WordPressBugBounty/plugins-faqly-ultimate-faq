@@ -105,8 +105,8 @@ class FAQLY_Metabox
     {
         ?>
         <div class="faqly-buy-pro-metabox">
-            <p class="faqly-buy-pro-text">Unlock more features with the Pro version.</p>
-            <a href="<?php echo esc_url( FAQLY_PLUGIN_MAIN_URL. 'products/the-ultimate-faq-wordpress-plugin'); ?>" target="_blank" class="button faqly-buy-pro-button">Upgrade To Pro!</a>
+            <p class="faqly-buy-pro-text"><?php esc_html_e( 'Unlock more features with the Pro version.', 'faqly-ultimate-faq' ); ?></p>
+            <a href="<?php echo esc_url( FAQLY_PLUGIN_MAIN_URL. 'products/the-ultimate-faq-wordpress-plugin'); ?>" target="_blank" class="button faqly-buy-pro-button"><?php esc_html_e( 'Upgrade To Pro!', 'faqly-ultimate-faq' ); ?></a>
         </div>
         <?php
     }
@@ -116,7 +116,7 @@ class FAQLY_Metabox
     {
         $shortcode = '[faqly_accordion id="' . esc_attr($post->ID) . '"]';
         ?>
-        <p>Use the shortcode below to display this FAQ group:</p>
+        <p><?php esc_html_e( 'Use the shortcode below to display this FAQ group:', 'faqly-ultimate-faq' ); ?></p>
         <div style="background: #f9f9f9; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
             <code><?php echo esc_html($shortcode); ?></code>
         </div>
@@ -144,14 +144,14 @@ class FAQLY_Metabox
                 <button class="nav-link <?php echo ($active_tab === 'faq-custom') ? 'active' : ''; ?>" id="faq-custom-tab"
                     data-bs-toggle="pill" data-bs-target="#faq-custom" type="button" role="tab" aria-controls="faq-custom"
                     aria-selected="<?php echo ($active_tab === 'faq-custom') ? 'true' : 'false'; ?>">
-                    Custom
+                    <?php esc_html_e( 'Custom', 'faqly-ultimate-faq' ); ?>
                 </button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link <?php echo ($active_tab === 'faq-post') ? 'active' : ''; ?>" id="faq-post-tab"
                     data-bs-toggle="pill" data-bs-target="#faq-post" type="button" role="tab" aria-controls="faq-post"
                     aria-selected="<?php echo ($active_tab === 'faq-post') ? 'true' : 'false'; ?>">
-                    Post
+                    <?php esc_html_e( 'Post', 'faqly-ultimate-faq' ); ?>
                 </button>
             </li>
         </ul>

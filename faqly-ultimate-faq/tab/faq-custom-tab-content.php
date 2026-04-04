@@ -24,7 +24,7 @@ $faqly_faqs = is_array( $faqly_faqs ) ? $faqly_faqs : [];
                     <span class="faq-icon">
                         <i class="<?php echo esc_attr( $faqly_faq['icon'] ?? 'default-icon-class' ); ?>"></i>
                     </span>
-                    FAQ #<?php echo esc_html( $faqly_index + 1 ); ?> 
+                    <?php esc_html_e( 'FAQ #', 'faqly-ultimate-faq' ); ?><?php echo esc_html( $faqly_index + 1 ); ?> 
                 </button>
             </h2>
             <div id="collapse-<?php echo esc_attr( $faqly_index ); ?>" 
@@ -43,7 +43,7 @@ $faqly_faqs = is_array( $faqly_faqs ) ? $faqly_faqs : [];
                     </div>
 
                     <div class="form-group mt-3">
-                        <label for="faq_description_<?php echo esc_attr( $faqly_index ); ?>">Description:</label>
+                        <label for="faq_description_<?php echo esc_attr( $faqly_index ); ?>"><?php esc_html_e( 'Description:', 'faqly-ultimate-faq' ); ?></label>
                         <?php
                         wp_editor( 
                             $faqly_faq['description'] ?? '', 
@@ -60,7 +60,7 @@ $faqly_faqs = is_array( $faqly_faqs ) ? $faqly_faqs : [];
 
                     <!-- Remove Button -->
                     <button type="button" class="btn btn-danger mt-3 remove-faq-btn" data-faq-id="<?php echo esc_attr( $faqly_index ); ?>">
-                        Remove FAQ
+                        <?php esc_html_e( 'Remove FAQ', 'faqly-ultimate-faq' ); ?>
                     </button>
                     
                 </div>
@@ -70,5 +70,5 @@ $faqly_faqs = is_array( $faqly_faqs ) ? $faqly_faqs : [];
 </div>
 
 <div class="mt-4">
-    <button type="button" id="add-faq-btn" class="btn btn-primary">Add New FAQ</button>
+    <button type="button" id="add-faq-btn" class="btn btn-primary"><?php esc_html_e( 'Add New FAQ', 'faqly-ultimate-faq' ); ?></button>
 </div>
