@@ -3,7 +3,7 @@
  * Plugin Name:       FAQly – Ultimate FAQ
  * Plugin URI:        https://www.seothemesexpert.com/products/best-wordpress-faq-plugin-free
  * Description:       A plugin to manage FAQs and display them as an accordion using a shortcode.
- * Version:           1.1.8
+ * Version:           1.1.9
  * Requires at least: 5.2
  * Requires PHP:      7.4
  * Author:            drakearthur
@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
 }
 define('FAQLY_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('FAQLY_PLUGIN_URL', plugin_dir_url(__FILE__));
-define('FAQLY_PLUGIN_VERSION', '1.1.8');
+define('FAQLY_PLUGIN_VERSION', '1.1.9');
 
 define('FAQLY_PLUGIN_MAIN_URL', 'https://www.seothemesexpert.com/');
 define('FAQLY_PLUGIN_LICENSE_URL', 'https://license.seothemesexpert.com/api/public/');
@@ -82,21 +82,18 @@ add_action('plugins_loaded', function () {
 });
 
 register_activation_hook(__FILE__, 'faqly_plugin_activation_hook');
-function faqly_plugin_activation_hook()
-{
+function faqly_plugin_activation_hook() {
     update_option('faqly_show_activation_popup', true);
 }
 
 register_deactivation_hook(__FILE__, 'faqly_plugin_deactivation_hook');
-function faqly_plugin_deactivation_hook()
-{
+function faqly_plugin_deactivation_hook() {
     delete_option('faqly_show_deactivation_popup');
 }
 
 
 add_action('wp_login', 'faqly_user_login_hook', 10, 2);
-function faqly_user_login_hook($user_login, $user)
-{
+function faqly_user_login_hook($user_login, $user) {
     update_option('faqly_show_activation_popup', true);
 }
 
@@ -106,8 +103,8 @@ add_action('wp_logout', function () {
 
 
 add_action('admin_footer', 'faqly_custom_popup_html');
-function faqly_custom_popup_html()
-{
+
+function faqly_custom_popup_html() {
     if (!get_option('faqly_show_activation_popup'))
         return;
     if (faqly_is_templates_page()) {
@@ -160,8 +157,7 @@ add_action('admin_enqueue_scripts', function () {
     wp_add_inline_style('faqly-admin-styles', $css);
 });
 
-function faqly_maybe_enqueue_scripts()
-{
+function faqly_maybe_enqueue_scripts() {
     if (is_admin()) {
         return;
     }
@@ -183,8 +179,7 @@ add_action('wp', 'faqly_maybe_enqueue_scripts');
 
 
 // Enqueue frontend scripts and styles
-function faqly_accordion_front_enqueue_scripts()
-{
+function faqly_accordion_front_enqueue_scripts() {
     wp_enqueue_script('jquery');
     wp_enqueue_style('faqly-accordion-style', FAQLY_PLUGIN_URL . 'assets/faq-accordion-front.css', array(), FAQLY_PLUGIN_VERSION);
     wp_enqueue_style('faqly-themes-style', FAQLY_PLUGIN_URL . 'assets/faqly-themes.css', array(), FAQLY_PLUGIN_VERSION);
@@ -207,8 +202,7 @@ function faqly_accordion_front_enqueue_scripts()
 }
 
 
-function faqly_enqueue_faq_admin_scripts($hook)
-{
+function faqly_enqueue_faq_admin_scripts($hook) {
 
     if ($hook == 'faqs_page_templates_page') {
         wp_enqueue_style('faqly-templates-accordion-style', FAQLY_PLUGIN_URL . 'assets/admin/css/faq-templates-accordion.css', array(), FAQLY_PLUGIN_VERSION);
@@ -285,10 +279,7 @@ function faqly_enqueue_faq_admin_scripts($hook)
 }
 add_action('admin_enqueue_scripts', 'faqly_enqueue_faq_admin_scripts');
 
-
-
-function faqly_enqueue_block_editor_assets()
-{
+function faqly_enqueue_block_editor_assets() {
     wp_register_script(
         'faqly-template-modal-js',
         FAQLY_PLUGIN_URL . 'assets/admin/js/faq-modal.js',
@@ -312,8 +303,7 @@ function faqly_enqueue_block_editor_assets()
 add_action('enqueue_block_editor_assets', 'faqly_enqueue_block_editor_assets');
 
 // for remove admin notices
-function faqly_remove_admin_notices()
-{
+function faqly_remove_admin_notices() {
     echo '<style>.notice, .update-nag, .updated, .error, .is-dismissible { display: none !important; }</style>';
     remove_all_actions('admin_notices');
     remove_all_actions('all_admin_notices');
@@ -340,8 +330,7 @@ add_filter('post_updated_messages', function ($messages) {
 
 add_action('admin_notices', 'faqly_admin_notice_with_html');
 
-function faqly_admin_notice_with_html()
-{
+function faqly_admin_notice_with_html() {
     ?>
     <div class="notice is-dismissible faqly-upsell-banner">
         <div class="faqly-notice-notice-main-img faqly-upsell-banner-image">
@@ -371,8 +360,7 @@ function faqly_admin_notice_with_html()
 
 add_filter('woocommerce_product_tabs', 'faqly_add_faqs_tab');
 
-function faqly_add_faqs_tab($tabs)
-{
+function faqly_add_faqs_tab($tabs) {
     $enabled = get_option('faqly_wc_faqs_enabled', 'yes');
     if ($enabled !== 'yes') {
         return $tabs;
@@ -422,8 +410,7 @@ function faqly_add_faqs_tab($tabs)
 /**
  * Render FAQs tab content
  */
-function faqly_render_faqs_tab_content($group_id)
-{
+function faqly_render_faqs_tab_content($group_id) {
     echo do_shortcode('[faqly_accordion id="' . intval($group_id) . '"]');
 }
 
@@ -441,8 +428,3 @@ if (!function_exists('faqly_pro_label')) {
         return $is_premium_user ? '' : '<a href="' . esc_url(FAQLY_PLUGIN_MAIN_URL . 'products/the-ultimate-faq-wordpress-plugin') . '" target="_blank" class="faqly-pro-label"><span class="dashicons dashicons-lock"></span> Pro</a>';
     }
 }
-
-
-
-
-

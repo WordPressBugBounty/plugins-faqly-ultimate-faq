@@ -6,24 +6,27 @@ if (!defined('ABSPATH')) {
 <header>
     <div>
         <div>
-            <h2 class="faqly-templates"><?php esc_html_e( 'Website Templates', 'faqly-ultimate-faq' ); ?></h2>
-            <p class="faqly-para"><?php esc_html_e( 'Experience the most innovative, intuitive, and lightning-fast WordPress theme. Create
-                your next website visually, quickly, and effortlessly.', 'faqly-ultimate-faq' ); ?></p>
+            <h2 class="faqly-templates"><?php esc_html_e('Website Templates', 'faqly-ultimate-faq'); ?></h2>
+            <p class="faqly-para"><?php esc_html_e('Experience the most innovative, intuitive, and lightning-fast WordPress theme. Create
+                your next website visually, quickly, and effortlessly.', 'faqly-ultimate-faq'); ?></p>
         </div>
 
         <!-- new add -->
         <ul class="faqly-navigation nav nav-pills " id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-                    type="button" role="tab" aria-controls="pills-home" aria-selected="true"><?php esc_html_e( 'Premium Templates', 'faqly-ultimate-faq' ); ?></button>
+                    type="button" role="tab" aria-controls="pills-home"
+                    aria-selected="true"><?php esc_html_e('Premium Templates', 'faqly-ultimate-faq'); ?></button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="pills-pro-tab" data-bs-toggle="pill" data-bs-target="#pills-pro"
-                    type="button" role="tab" aria-controls="pills-pro" aria-selected="true"><?php esc_html_e( 'Faqly Pro', 'faqly-ultimate-faq' ); ?></button>
+                    type="button" role="tab" aria-controls="pills-pro"
+                    aria-selected="true"><?php esc_html_e('Faqly Pro', 'faqly-ultimate-faq'); ?></button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-                    type="button" role="tab" aria-controls="pills-pro" aria-selected="true"><?php esc_html_e( 'All Themes', 'faqly-ultimate-faq' ); ?></button>
+                    type="button" role="tab" aria-controls="pills-pro"
+                    aria-selected="true"><?php esc_html_e('All Themes', 'faqly-ultimate-faq'); ?></button>
             </li>
         </ul>
     </div>
@@ -39,11 +42,12 @@ if (!defined('ABSPATH')) {
                 <div class="search-container">
                     <input type="text" id="search-box" class="form-control" placeholder="Search products...">
                     <span class="dashicons dashicons-search"></span>
-                    <button id="search-button" class="btn btn-secondary"><?php esc_html_e( 'Search', 'faqly-ultimate-faq' ); ?></button>
+                    <button id="search-button"
+                        class="btn btn-secondary"><?php esc_html_e('Search', 'faqly-ultimate-faq'); ?></button>
                 </div>
                 <select id="api-response-dropdown" class="form-control">
 
-                    <option value=""><?php esc_html_e( 'Themes Categories', 'faqly-ultimate-faq' ); ?></option>
+                    <option value=""><?php esc_html_e('Themes Categories', 'faqly-ultimate-faq'); ?></option>
 
                 </select>
 
@@ -54,16 +58,17 @@ if (!defined('ABSPATH')) {
                 </div>
             </div>
 
-            <button id="load-more" class="btn btn-primary" style="display:none;"><?php esc_html_e( 'Load More', 'faqly-ultimate-faq' ); ?></button>
+            <button id="load-more" class="btn btn-primary"
+                style="display:none;"><?php esc_html_e('Load More', 'faqly-ultimate-faq'); ?></button>
             <div class="support-container">
                 <div class="support-content">
-                    <h2><?php esc_html_e( 'Need Assistance or Expert Advice?', 'faqly-ultimate-faq' ); ?></h2>
-                    <p><?php esc_html_e( 'Have a question or need assistance with the theme? Feel free to submit a support ticket or
-                        connect with our helpful community on our website.', 'faqly-ultimate-faq' ); ?></p>
+                    <h2><?php esc_html_e('Need Assistance or Expert Advice?', 'faqly-ultimate-faq'); ?></h2>
+                    <p><?php esc_html_e('Have a question or need assistance with the theme? Feel free to submit a support ticket or
+                        connect with our helpful community on our website.', 'faqly-ultimate-faq'); ?></p>
                     <div class="support-buttons">
                         <a class="sup-btn" target="_blank"
-                            href="<?php echo esc_url(FAQLY_PLUGIN_MAIN_URL . 'pages/community'); ?>"><?php esc_html_e( 'Submit a Support
-                            Ticket', 'faqly-ultimate-faq' ); ?></a>
+                            href="<?php echo esc_url(FAQLY_PLUGIN_MAIN_URL . 'pages/community'); ?>"><?php esc_html_e('Submit a Support
+                            Ticket', 'faqly-ultimate-faq'); ?></a>
                     </div>
                 </div>
             </div>
@@ -190,17 +195,18 @@ if (!defined('ABSPATH')) {
             dropdown.innerHTML = '<option value="">Themes Categories</option>';
 
             if (data && data.data && Array.isArray(data.data)) {
-                data.data.forEach(collection => {
 
-                    if (collection.handle == "free") {
-                        return;
-                    }
+                let collections = data.data.filter(collection => collection.handle !== "free");
 
+                collections.sort((a, b) => a.title.localeCompare(b.title));
+
+                collections.forEach(collection => {
                     const option = document.createElement('option');
                     option.value = collection.handle;
                     option.textContent = collection.title;
                     dropdown.appendChild(option);
                 });
+
             } else {
                 console.error('Data format is incorrect:', data);
             }
@@ -217,9 +223,10 @@ if (!defined('ABSPATH')) {
             function renderProduct(item) {
                 const imageSrc = item.images.edges[0]?.node.src || 'default-image.jpg';
                 const price = item.variants.edges[0]?.node.price || 'N/A';
-                const demoLink = item.metafield?.value || '#';
+                // const demoLink = item.metafield?.value || '#';
+                const demoLink = item.metafield?.value || '';
 
-                const demoButton = demoLink !== '#'
+                const demoButton = demoLink
                     ? `<a href="${demoLink}" class="btn btn-primary demo card-demo-btn" target="_blank" style="margin-left: 10px;">Demo</a>`
                     : '';
 
@@ -300,7 +307,7 @@ if (!defined('ABSPATH')) {
 
                     const imageSrc = item.images.edges[0]?.node.src || 'default-image.jpg';
                     const price = item.variants.edges[0]?.node.price || 'N/A';
-                    const demoLink = item.metafield?.value || '#';
+                    const demoLink = item.metafield?.value || '';
 
                     const colElement = document.createElement('div');
                     colElement.classList.add('col-12', 'col-md-6', 'col-lg-3', 'mb-3');
@@ -313,7 +320,12 @@ if (!defined('ABSPATH')) {
                                 <h5 class="card-title faqly-product-card-title">${item.title}</h5>
                                 <div class="faqly-button-wrapper ">
                                     <a href="${item.onlineStoreUrl}" class="btn btn-primary card-buy-now-btn" target="_blank">Buy Now</a>
-                                    <a href="${demoLink}" class="btn btn-primary demo card-demo-btn" target="_blank" style="margin-left: 10px;">Demo</a>
+
+                                 ${demoLink
+                            ? `<a href="${demoLink}" class="btn btn-primary demo card-demo-btn" target="_blank" style="margin-left: 10px;">Demo</a>`
+                            : ''
+
+                        }
                                 </div>
                                 <p class="card-text faqly-product-card-text"><span>Price: </span>$${price}</p>
                             </div>
@@ -328,7 +340,6 @@ if (!defined('ABSPATH')) {
         }
 
 
-        // search function
         function debouncedSearch() {
             clearTimeout(debounceTimeout);
             debounceTimeout = setTimeout(function () {
@@ -337,7 +348,6 @@ if (!defined('ABSPATH')) {
             }, 1000);
         }
 
-        // Event listener search input
         document.getElementById('search-box').addEventListener('input', function () {
             searchQuery = this.value.trim();
             debouncedSearch();

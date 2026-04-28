@@ -1206,3 +1206,32 @@ a#pro-tab {
   color: #856404;
   font-weight: 500;
 }
+
+/* Templates Main Menu Styling */
+#toplevel_page_templates_main>a {
+    background: #d71800;
+    color: #fff;
+    font-weight: 600;  
+}
+
+/* Icon color */
+#toplevel_page_templates_main .wp-menu-image:before {
+  color: #fff;
+}
+
+/* Dashicon*/
+#toplevel_page_templates_main .wp-menu-image,
+#toplevel_page_templates_main .wp-menu-image:before {
+    color: #fff !important;
+}
+
+/* Hover */
+#toplevel_page_templates_main:hover>a {
+  background: #135e96;
+  color: #fff;
+}
+
+/* Active state */
+#toplevel_page_templates_main.current>a {
+  background: #135e96;
+}

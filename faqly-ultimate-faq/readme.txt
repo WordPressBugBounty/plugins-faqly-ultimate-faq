@@ -4,7 +4,7 @@ Tags: faq, faqs, accordion, faq-shortcode, faq-block
 Requires at least: 5.2
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.1.8
+Stable tag: 1.1.9
 License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,43 +58,43 @@ Improve navigation with a powerful search feature that helps visitors find answe
 
 🚀 **Premium Features**
 
-1. 3 Layout Options – Horizontal, Vertical, & Multi-Column
+* 3 Layout Options – Horizontal, Vertical, & Multi-Column
 
-2. 17+ Pre-Designed Beautiful Themes
+* 17+ Pre-Designed Beautiful Themes
 
-3. Advanced Typography & Styling Controls
+* Advanced Typography & Styling Controls
 
-4. Compatible with Almost Any Type of Content
+* Compatible with Almost Any Type of Content
 
-5. Flexible Activator Events & Display Modes
+* Flexible Activator Events & Display Modes
 
-6. One-Click Expand/Collapse All Button
+* One-Click Expand/Collapse All Button
 
-7. 14+ Stylish Expand & Collapse Icon Sets
+* 14+ Stylish Expand & Collapse Icon Sets
 
-8. AJAX-Powered FAQ Search
+* AJAX-Powered FAQ Search
 
-9. Import & Export FAQs Easily
+* Import & Export FAQs Easily
 
-10. WooCommerce Product FAQ Integration
+* WooCommerce Product FAQ Integration
 
-11. Accordion Support for Taxonomies & Custom Post Types
+* Accordion Support for Taxonomies & Custom Post Types
 
-12. Built-In FAQ Schema for SEO
+* Built-In FAQ Schema for SEO
 
-13. WP Classic Editor (WYSIWYG) Support for Accordion Content
+* WP Classic Editor (WYSIWYG) Support for Accordion Content
 
-14. Option to Open Multiple Accordions Simultaneously
+* Option to Open Multiple Accordions Simultaneously
 
-15. Multi-Level / Nested Accordion Support
+* Multi-Level / Nested Accordion Support
 
-16. 25+ Smooth Animations & Transition Effects
+* 25+ Smooth Animations & Transition Effects
 
-17. AJAX Pagination for FAQs
+* AJAX Pagination for FAQs
 
-18. Interactive Hover Effects for Engaging UI
+* Interactive Hover Effects for Engaging UI
 
-19. Custom Icons option
+* Custom Icons option
 
 ➡️ **[Upgrade to Pro!](https://www.seothemesexpert.com/products/the-ultimate-faq-wordpress-plugin)**
 
@@ -136,6 +136,9 @@ Follow these simple steps to install the FAQly – Ultimate FAQ Plugin:
 If you need any further assistance, feel free to check our documentation or reach out for support.
 
 == Changelog ==
+
+= 1.1.9 - 27-04-2026 =
+* Added Templates menu.
 
 = 1.1.8 - 04-04-2026 =
 * Improved output escaping for better security and WordPress coding standards compliance.

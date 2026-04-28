@@ -19,6 +19,7 @@ class FAQLY_Admin
 
         add_filter('manage_' . self::FAQ_GROUP_POST_TYPE . '_posts_columns', [$this, 'faqly_add_shortcode_column']);
         add_action('manage_' . self::FAQ_GROUP_POST_TYPE . '_posts_custom_column', [$this, 'faqly_render_shortcode_column'], 10, 2);
+        add_action('admin_init', [$this, 'faqly_templates_redirect']);
     }
 
     public function faqly_enqueue_admin_scripts()
@@ -34,6 +35,21 @@ class FAQLY_Admin
     ");
     }
 
+    // new for template redirect 
+    public function faqly_templates_redirect()
+    {
+        if (
+            isset($_GET['page']) &&
+            $_GET['page'] === 'templates_main'
+        ) {
+            wp_safe_redirect(
+                admin_url('edit.php?post_type=' . self::FAQ_GROUP_POST_TYPE . '&page=templates_page')
+            );
+            exit;
+        }
+    }
+    //end
+
     public function faqly_add_faq_admin_menu()
     {
         // Main menu: FAQs
@@ -45,6 +61,18 @@ class FAQLY_Admin
             '',
             'dashicons-editor-help',
             20
+        );
+
+
+        // Main menu: Templates
+        add_menu_page(
+            'Templates',
+            'Templates',
+            'manage_options',
+            'templates_main',
+            '__return_null',
+            'dashicons-screenoptions',
+            10
         );
 
         // Submenu: Manage FAQ Group
