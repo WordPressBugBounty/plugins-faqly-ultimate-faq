@@ -598,9 +598,9 @@ li#toplevel_page_edit-post_type-faqly_faq_group ul li:last-child a:hover {
 .faqly-upsell-banner-btn a {
   background-color: red;
   padding: 8px 10px;
-  color: white;
+  color: white !important;
   border-radius: 5px;
-  text-decoration: none;
+  text-decoration: none !important;
   font-weight: 800;
   font-size: 23px;
 }
