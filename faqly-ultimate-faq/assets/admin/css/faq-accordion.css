@@ -532,7 +532,7 @@ p.faqly-product-card-text {
 
 li#toplevel_page_edit-post_type-faqly_faq_group ul li:last-child a {
   background: #d71800;
-  color: #fff;
+  color: #fff !important;
   font-weight: 600;
   text-align: center;
   border-radius: 4px;

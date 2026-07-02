@@ -346,3 +346,72 @@ function faqly_import_data() {
     }
 }
 add_action('wp_ajax_faqly_import_data', 'faqly_import_data');
+
+function faqly_apply_faq_template() {
+    try {
+        if (!isset($_POST['nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['nonce'])), 'faqly_quickstart_nonce')) {
+            wp_send_json_error('Security check failed');
+            return;
+        }
+
+        if (!current_user_can('manage_options')) {
+            wp_send_json_error('Insufficient permissions');
+            return;
+        }
+
+        if (!isset($_POST['slug'])) {
+            wp_send_json_error('Missing template parameter');
+            return;
+        }
+
+        $slug = sanitize_key(wp_unslash($_POST['slug']));
+
+        if (!function_exists('faqly_get_faq_content_templates')) {
+            wp_send_json_error('Templates are unavailable');
+            return;
+        }
+
+        $templates = faqly_get_faq_content_templates();
+
+        if (!isset($templates[$slug])) {
+            wp_send_json_error('Template not found');
+            return;
+        }
+
+        $template = $templates[$slug];
+
+        if (!empty($template['is_pro']) && !get_option('faqly_pro_is_premium', false)) {
+            wp_send_json_error('This template requires the Pro version');
+            return;
+        }
+
+        $new_post_id = wp_insert_post([
+            'post_title'  => sanitize_text_field($template['title']),
+            'post_type'   => 'faqly_faq_group',
+            'post_status' => 'publish',
+        ]);
+
+        if (is_wp_error($new_post_id) || !$new_post_id) {
+            wp_send_json_error('Failed to create FAQ group');
+            return;
+        }
+
+        $faq_items = [];
+        foreach ($template['items'] as $item) {
+            $faq_items[] = [
+                'title'       => sanitize_text_field($item['title']),
+                'description' => wp_kses_post($item['description']),
+            ];
+        }
+
+        update_post_meta($new_post_id, '_faq_active_tab', 'faq-custom');
+        update_post_meta($new_post_id, '_faq_items', $faq_items);
+
+        wp_send_json_success([
+            'edit_url' => get_edit_post_link($new_post_id, 'raw'),
+        ]);
+    } catch (Exception $e) {
+        wp_send_json_error('Failed to apply template: ' . $e->getMessage());
+    }
+}
+add_action('wp_ajax_faqly_apply_faq_template', 'faqly_apply_faq_template');

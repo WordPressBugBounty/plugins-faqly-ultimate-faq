@@ -3,7 +3,7 @@
  * Plugin Name:       FAQly – Ultimate FAQ
  * Plugin URI:        https://www.seothemesexpert.com/products/best-wordpress-faq-plugin-free
  * Description:       A plugin to manage FAQs and display them as an accordion using a shortcode.
- * Version:           1.2.0
+ * Version:           1.2.1
  * Requires at least: 5.2
  * Requires PHP:      7.4
  * Author:            drakearthur
@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
 }
 define('FAQLY_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('FAQLY_PLUGIN_URL', plugin_dir_url(__FILE__));
-define('FAQLY_PLUGIN_VERSION', '1.2.0');
+define('FAQLY_PLUGIN_VERSION', '1.2.1');
 
 define('FAQLY_PLUGIN_MAIN_URL', 'https://www.seothemesexpert.com/');
 define('FAQLY_PLUGIN_LICENSE_URL', 'https://license.seothemesexpert.com/api/public/');
@@ -71,6 +71,7 @@ require_once FAQLY_PLUGIN_DIR . 'includes/class-faq-admin.php';
 require_once FAQLY_PLUGIN_DIR . 'includes/class-faq-metabox.php';
 require_once FAQLY_PLUGIN_DIR . 'includes/class-faq-shortcode.php';
 require_once FAQLY_PLUGIN_DIR . 'includes/faqly-tools.php';
+require_once FAQLY_PLUGIN_DIR . 'includes/faqly-faq-templates.php';
 require_once FAQLY_PLUGIN_DIR . 'ajax/ajax.php';
 
 // Initialize the plugin
@@ -206,6 +207,16 @@ function faqly_enqueue_faq_admin_scripts($hook) {
 
     if ($hook == 'faqs_page_templates_page') {
         wp_enqueue_style('faqly-templates-accordion-style', FAQLY_PLUGIN_URL . 'assets/admin/css/faq-templates-accordion.css', array(), FAQLY_PLUGIN_VERSION);
+
+        wp_enqueue_script('faqly-quickstart-templates-script', FAQLY_PLUGIN_URL . 'assets/admin/js/faqly-quickstart-templates.js', array('jquery'), FAQLY_PLUGIN_VERSION, true);
+        wp_localize_script('faqly-quickstart-templates-script', 'faqly_quickstart_vars', [
+            'ajax_url' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce('faqly_quickstart_nonce'),
+            'i18n' => [
+                'applying' => __('Applying...', 'faqly-ultimate-faq'),
+                'error' => __('Something went wrong. Please try again.', 'faqly-ultimate-faq'),
+            ],
+        ]);
     }
 
     // if (isset($_GET['page']) && $_GET['page'] === 'faqly-woocommerce') {

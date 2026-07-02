@@ -4,7 +4,7 @@ Tags: faq, faqs, accordion, faq-shortcode, faq-block
 Requires at least: 5.2
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,7 @@ FAQly is lightweight, user-friendly, and integrates seamlessly with popular page
 ✅ Built-in FAQ Schema – Helps search engines recognize and display your FAQs.  
 ✅ Customization Options – Adjust FAQ elements like titles, categories, and styles.
 ✅ FAQ Statistics – Track views to identify the most popular FAQs.
+✅ Quick-Start FAQ Templates – Instantly create a ready-to-use FAQ group from pre-written content packs.
 
 
 🔍 **Advanced FAQ Search**
@@ -96,6 +97,8 @@ Improve navigation with a powerful search feature that helps visitors find answe
 
 * Custom Icons option
 
+* Additional Quick-Start FAQ Templates (SaaS, Real Estate, Restaurant & more)
+
 ➡️ **[Upgrade to Pro!](https://www.seothemesexpert.com/products/the-ultimate-faq-wordpress-plugin)**
 
 FAQly works out of the box with popular translation plugins like WPML, Loco Translate, and Polylang, making it easy to create multilingual FAQs.
@@ -136,6 +139,9 @@ Follow these simple steps to install the FAQly – Ultimate FAQ Plugin:
 If you need any further assistance, feel free to check our documentation or reach out for support.
 
 == Changelog ==
+
+= 1.2.1 - 02-07-2026 =
+* Added Quick-Start FAQ Templates: instantly create a pre-filled FAQ group from ready-made content packs.
 
 = 1.2.0 - 30-05-2026 =
 * Minor Bugs Fixes.

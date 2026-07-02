@@ -28,6 +28,11 @@ if (!defined('ABSPATH')) {
                     type="button" role="tab" aria-controls="pills-pro"
                     aria-selected="true"><?php esc_html_e('All Themes', 'faqly-ultimate-faq'); ?></button>
             </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-quickstart-tab" data-bs-toggle="pill" data-bs-target="#pills-quickstart"
+                    type="button" role="tab" aria-controls="pills-quickstart"
+                    aria-selected="false"><?php esc_html_e('Quick-Start Templates', 'faqly-ultimate-faq'); ?></button>
+            </li>
         </ul>
     </div>
 </header>
@@ -107,6 +112,48 @@ if (!defined('ABSPATH')) {
 
         </div>
         <!-- end -->
+    </div>
+
+    <div class="tab-pane fade" id="pills-quickstart" role="tabpanel" aria-labelledby="pills-quickstart-tab">
+        <?php
+        $faqly_is_premium_user = get_option('faqly_pro_is_premium', false);
+        $faqly_quickstart_templates = function_exists('faqly_get_faq_content_templates') ? faqly_get_faq_content_templates() : [];
+        ?>
+        <p class="faqly-para"><?php esc_html_e('Instantly create a ready-to-use FAQ group from one of our pre-written content packs.', 'faqly-ultimate-faq'); ?></p>
+        <div class="row faqly-quickstart-container">
+            <?php foreach ($faqly_quickstart_templates as $faqly_qs_slug => $faqly_qs_template):
+                $faqly_qs_is_pro = !empty($faqly_qs_template['is_pro']);
+                $faqly_qs_locked = $faqly_qs_is_pro && !$faqly_is_premium_user;
+            ?>
+                <div class="col-md-4 mb-4">
+                    <div class="card faqly-quickstart-card <?php echo $faqly_qs_locked ? 'faqly-quickstart-locked' : ''; ?>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <?php echo esc_html($faqly_qs_template['title']); ?>
+                                <?php echo $faqly_qs_is_pro ? wp_kses_post(faqly_pro_label($faqly_is_premium_user)) : ''; ?>
+                            </h5>
+                            <p class="card-text"><?php echo esc_html($faqly_qs_template['description']); ?></p>
+                            <p class="faqly-quickstart-count">
+                                <?php
+                                echo esc_html(
+                                    sprintf(
+                                        /* translators: %d: number of questions in the template */
+                                        _n('%d question included', '%d questions included', count($faqly_qs_template['items']), 'faqly-ultimate-faq'),
+                                        count($faqly_qs_template['items'])
+                                    )
+                                );
+                                ?>
+                            </p>
+                            <button type="button" class="button button-primary faqly-quickstart-use-btn"
+                                data-template="<?php echo esc_attr($faqly_qs_slug); ?>"
+                                <?php echo $faqly_qs_locked ? 'disabled="disabled"' : ''; ?>>
+                                <?php esc_html_e('Use Template', 'faqly-ultimate-faq'); ?>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
 
 </div>
